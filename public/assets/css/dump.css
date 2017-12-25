@@ -1,0 +1,1995 @@
+#message:before,
+.panel-heading .btn-girls {
+    color: #fff;
+    display: block;
+    text-align: center
+}
+#headerDiv,
+#rouletteMain {
+    position: relative;
+    height: 100%
+}
+#cntr_lst #all_cntr,
+#gender,
+#message,
+#message:before,
+.buttonsContainer {
+    text-align: center
+}
+#cntr_lst li,
+#cntr_sel,
+.tt:focus,
+.tt:hover,
+button {
+    cursor: pointer
+}
+#rouletteMain {
+    background: #eaeaea;
+    width: 100%
+}
+#futterDiv,
+#message,
+#rightButton,
+#switchCameraBtn,
+.buttonsContainer,
+.chatDiv {
+    position: absolute
+}
+#futterDiv {
+    bottom: 10px;
+    left: 10px
+}
+#message {
+    font-size: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%
+}
+#message:before {
+    content: "\e801";
+    font-size: 36px;
+    font-family: FontAwesome;
+    background: #616161;
+    margin: 10px auto;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    z-index: -1
+}
+.chatDiv {
+    background: 0 0;
+    border: none;
+    box-shadow: none;
+    left: 1%;
+    right: auto;
+    bottom: 50px;
+    width: 98%
+}
+.panel-heading .btn-girls {
+    background: #ff8000;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 -2px 2px -1px rgba(0, 0, 0, .5) inset;
+    box-shadow: 0 -2px 2px -1px rgba(0, 0, 0, .5) inset;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 8px;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #777;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    width: 100%
+}
+#cntr_lst li,
+#sendBtn {
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease
+}
+.panel-heading .btn-girls:hover {
+    background: #ee7802
+}
+#rightButton,
+button {
+    background: 0 0;
+    border-style: none;
+    outline: 0
+}
+.input-group {
+    display: table
+}
+.input-group-btn {
+    display: table-cell;
+    width: 1%;
+    vertical-align: middle
+}
+#chatMessage {
+    width: 100%;
+    padding: 9px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 3px 0 0 3px
+}
+#localVideo {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 130px;
+    height: 130px;
+    object-fit: inherit;
+    border-radius: 50%
+}
+#headerDiv {
+    background: #cecece;
+    width: 100%
+}
+#remoteVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: auto;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    object-fit: cover
+}
+.buttonsContainer {
+    bottom: 0;
+    max-height: 55px;
+    margin: 0 auto;
+    width: 100%
+}
+.tt {
+    padding: 2px
+}
+#rightButton {
+    color: #309dff;
+    font-size: 90px;
+    top: 50%;
+    right: 0;
+    -ms-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    line-height: 0;
+    height: 60px;
+    width: 45px;
+    z-index: 1
+}
+#rightButton:before {
+    content: '\e803';
+    font-family: FontAwesome
+}
+#loadingDiv {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%)
+}
+#loadingDiv:before {
+    content: '';
+    background: url(../img/preloader.png) no-repeat;
+    background-size: 100%;
+    display: block;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: rotate 1.2s infinite ease-in-out;
+    -moz-animation: rotate 1.2s infinite ease-in-out;
+    -ms-animation: rotate 1.2s infinite ease-in-out;
+    -o-animation: rotate 1.2s infinite ease-in-out;
+    animation: rotate 1.2s infinite linear
+}
+@keyframes rotate {
+    0% {
+        transform: rotateY(0)
+    }
+    100% {
+        transform: rotateY(360deg)
+    }
+}
+#sendBtn {
+    background: #309dff;
+    color: #fff!important;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    height: 35px;
+    transition: all .3s ease
+}
+#sendBtn:hover {
+    background: #5aa6ca
+}
+#switchCameraBtn {
+    display: none;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    color: #309dff;
+    font-size: 20px;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 50%;
+    padding: 3px 6px
+}
+#switchCameraBtn:before {
+    content: '\e802';
+    font-family: FontAwesome
+}
+.b-light .chatmsg:after,
+.b-light .chatmsg:before,
+.bg-primary .chatmsg:after {
+    content: " ";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    top: 50%
+}
+.buttonsContainer button:last-child {
+    border-radius: 0 5px 0 0
+}
+.buttonsContainer button:first-child {
+    border-radius: 5px 0 0
+}
+.buttonsContainer>button {
+    background: rgba(255, 255, 255, .5);
+    margin: 0 -2px;
+    padding: 2px 15px;
+    position: relative;
+    font-size: 38px;
+    color: #309dff;
+    border: 0;
+    outline: 0
+}
+.btn {
+    font-weight: 500;
+    border-radius: 2px;
+    outline: 0!important
+}
+.btn-default {
+    color: #58666e;
+    background-color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 20px;
+    -webkit-box-shadow: 0 1px 1px rgba(90, 90, 90, .1);
+    box-shadow: 0 1px 1px rgba(90, 90, 90, .3)
+}
+.b-light .chatmsg,
+.bg-primary .chatmsg {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 5px;
+    position: relative
+}
+#conversation {
+    min-height: 100px;
+    overflow-y: auto
+}
+.pos-rlt {
+    position: relative
+}
+.no-border,
+.no-borders {
+    border-color: transparent;
+    border-width: 0
+}
+.pos-rlt.wrapper.bg-primary {
+    background: 0 0;
+    text-align: right
+}
+.pos-rlt.wrapper.b-light {
+    background: 0 0;
+    text-align: left
+}
+.bg-primary .chatmsg {
+    background: #c8e8f7;
+    color: #222
+}
+.b-light .chatmsg {
+    background: #fff;
+    border: 1px solid #c8e8f7
+}
+.b-light .chatmsg:after,
+.b-light .chatmsg:before {
+    right: 100%;
+    border: solid transparent;
+    position: absolute
+}
+.b-light .chatmsg:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: #fff;
+    border-width: 7px;
+    margin-top: -7px
+}
+.b-light .chatmsg:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-right-color: #c8e8f7;
+    border-width: 8px;
+    margin-top: -8px
+}
+.bg-primary .chatmsg:after {
+    left: 100%;
+    border: solid transparent;
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #c8e8f7;
+    border-width: 7px;
+    margin-top: -7px
+}
+.m-b {
+    position: relative;
+    margin-bottom: 3px
+}
+.panel-footer {
+    padding: 3px;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #7b7b7b;
+    border-color: #505050;
+    border-radius: 0 0 2px 2px
+}
+#flag,
+#message,
+.girls_btn {
+    display: none
+}
+#cntr_pref,
+#cntr_sel {
+    display: inline-block
+}
+.buttonsContainer .off {
+    color: #616161
+}
+.buttonsContainer .off:after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background: #616161;
+    left: 0;
+    top: 50%;
+    transform: rotateZ(45deg)
+}
+.cl_wrap,
+.cntr_wrap {
+    height: 100%;
+    width: 100%;
+    position: absolute
+}
+#ChatButton:before {
+    content: "\f0e6";
+    font-family: FontAwesome
+}
+#cancelButton:before {
+    content: "\e806";
+    font-family: FontAwesome
+}
+#toggleAudio:before {
+    content: "\e809";
+    font-family: FontAwesome
+}
+#toggleVideo:before {
+    content: "\e6000";
+    font-family: FontAwesome
+}
+#report:before {
+    content: "\e807";
+    font-family: FontAwesome
+}
+.cntr_wrap {
+    top: 0;
+    left: 0
+}
+#cntr_sel {
+    background: rgba(255, 255, 255, .5);
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    border-radius: 4px;
+    padding: 3px 8px;
+    position: relative;
+    left: 7px;
+    top: 7px;
+    z-index: 1
+}
+#cntr_sel:before {
+    content: "\e804";
+    color: #309dff;
+    font-family: FontAwesome;
+    font-size: 28px;
+    line-height: initial;
+    margin-right: 5px
+}
+#cntr_pref {
+    vertical-align: super
+}
+#cntr_pref.flag:before,
+#cntr_pref:after {
+    display: inline-block;
+    vertical-align: middle
+}
+#cntr_pref:after {
+    content: '\e803';
+    font-family: FontAwesome;
+    margin-left: 5px;
+    transform: rotateZ(90deg)
+}
+#cntr_pref.flag:before {
+    margin: 0 5px;
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4)
+}
+.cl_wrap {
+    display: none;
+    padding: 7px;
+    top: 0;
+    left: 0;
+    z-index: 100001;
+    overflow: auto
+}
+#cntr_lst li,
+.modal,
+.modal-open,
+.rv_head {
+    overflow: hidden
+}
+#cntr_lst {
+    background: #fff;
+    box-shadow: 2px 2px 4px #b2b2b2;
+    border-radius: 8px;
+    padding: 0 7px;
+    margin: 0
+}
+#cntr_lst li {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 16px;
+    list-style-type: none;
+    transition: all .3s ease;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100%/ 4)
+}
+#cntr_lst li.active,
+#cntr_lst li:hover {
+    background: #b2dbff;
+    color: #333
+}
+#cntr_lst #all_cntr.active {
+    background: 0 0
+}
+#cntr_lst #all_cntr span:hover,
+#cntr_lst #all_cntr.active span {
+    background: #b2dbff
+}
+#cntr_lst #all_cntr {
+    border-bottom: 1px solid silver;
+    cursor: default;
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 100%
+}
+#cntr_lst #all_cntr:hover {
+    background: 0 0
+}
+#cntr_lst #all_cntr span {
+    background: #f3f3f3;
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 1px 10px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease
+}
+#close_cl {
+    cursor: pointer;
+    color: #5f5f5f;
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    font-size: 26px;
+    z-index: 2
+}
+.rv_head {
+    background: rgba(255, 255, 255, .5);
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, 0);
+    white-space: nowrap;
+    z-index: 1!important
+}
+.rv_head>div {
+    display: inline-block;
+    vertical-align: top
+}
+span.emoji,
+span.emoji-inner {
+    text-indent: -9999px;
+    vertical-align: baseline
+}
+#gender {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 25px;
+    width: 24px;
+    height: 24px;
+    text-shadow: 1px 1px 1px #5d5d5d
+}
+.gndr_male,
+.text_mode #message.msg_male:before {
+    background: #2a8dda
+}
+.gndr_male:before,
+.text_mode #message.msg_male:before {
+    content: "\f222";
+    font-family: FontAwesome
+}
+.gndr_female,
+.text_mode #message.msg_female:before {
+    background: #f36a82
+}
+.gndr_female:before,
+.text_mode #message.msg_female:before {
+    content: "\f221";
+    font-family: FontAwesome
+}
+.gndr_couple,
+.text_mode #message.msg_couple:before {
+    background: #e25906;
+    font-size: 14px
+}
+.gndr_couple:before,
+.text_mode #message.msg_couple:before {
+    content: "\f228";
+    font-family: FontAwesome
+}
+#water_mrk {
+    background: url(/assets/img/logo.png) no-repeat;
+    background-size: 100%;
+    width: 130px;
+    height: 35px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    -webkit-filter: drop-shadow(1px 1px 1px #000);
+    -o-filter: drop-shadow(1px 1px 1px #000);
+    filter: drop-shadow(1px 1px 1px #000);
+    opacity: .9;
+    z-index: 10
+}
+.text_mode #gender {
+    display: none
+}
+.text_mode .rv_head {
+    background: 0 0;
+    top: 50%;
+    font-size: 22px;
+    transform: translate(50%, 55px)
+}
+.text_mode .rv_head .flag:before {
+    margin-right: 10px;
+    margin-bottom: 2px;
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4)
+}
+.text_mode .rv_head #flag {
+    max-width: initial
+}
+@media only screen and (max-width: 991px) {
+    #report {
+        position: fixed;
+        top: 5px;
+        right: 0;
+        background: 0 0
+    }
+    .buttonsContainer>button {
+        font-size: 32px
+    }
+    .panel-heading .btn-girls {
+        display: none
+    }
+    #conversation {
+        min-height: auto;
+        padding: 10px 15px
+    }
+}
+@media only screen and (max-width: 768px) {
+    #cntr_lst li {
+        width: calc(100%/ 3)
+    }
+    #rightButton {
+        height: 70px
+    }
+}
+@media only screen and (max-width: 480px) {
+    #cntr_sel {
+        background: 0 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        font-size: 0;
+        position: relative
+    }
+    #cntr_pref {
+        position: absolute;
+        top: 12px;
+        left: 12px
+    }
+    #cntr_pref.flag:before {
+        margin: 0;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1)
+    }
+    #rightButton {
+        font-size: 70px;
+        width: 40px
+    }
+    .buttonsContainer {
+        background: rgba(255, 255, 255, .5)
+    }
+    .buttonsContainer>button {
+        background: 0 0;
+        font-size: 30px;
+        line-height: initial;
+        padding-top: 3px
+    }
+    #dialogBody>div>div {
+        float: none!important;
+        margin: 0 auto 20px!important
+    }
+    #futterDiv {
+        bottom: 40px;
+        left: 5px
+    }
+    #cntr_lst li {
+        width: calc(100%/ 2)
+    }
+    #message {
+        font-size: 16px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 90%;
+        left: 5%
+    }
+    #localVideo {
+        width: 100px;
+        height: 100px
+    }
+    #loadingDiv:before {
+        width: 60px;
+        height: 60px
+    }
+    .text_mode .rv_head {
+        font-size: 18px
+    }
+}
+@media only screen and (min-width: 991px) {
+    #futterDiv,
+    .chatDiv {
+        display: block!important
+    }
+    #headerDiv {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        width: calc(100% - 320px)
+    }
+    #loadingDiv,
+    #remoteVideo,
+    .chatDiv {
+        position: absolute
+    }
+    #remoteVideo {
+        z-index: 0;
+        left: 0;
+        transform: translate(0, -50%)
+    }
+    .chatDiv {
+        bottom: auto;
+        left: auto;
+        top: 0;
+        right: 0;
+        width: 315px;
+        height: calc(100% - 44px);
+        background-color: #eaeaea;
+        box-shadow: none
+    }
+    #localVideo {
+        width: 170px;
+        height: 170px
+    }
+    #conversation {
+        background: #fff;
+        max-height: initial;
+        height: calc(100% - 45px);
+        padding: 10px 15px
+    }
+    #sendBtn {
+        font-size: 15px;
+        padding: 9px 15px
+    }
+    .buttonsContainer button:nth-child(4) {
+        border-radius: 0 5px 0 0
+    }
+    .panel-footer {
+        padding: 5px;
+        max-width: inherit
+    }
+    #ChatButton,
+    .top_report {
+        display: none
+    }
+    .girls_btn {
+        background: #67bfe8;
+        box-shadow: 0 -4px 2px -1px rgba(0, 0, 0, .15) inset;
+        color: #fff;
+        display: block;
+        font-size: 22px;
+        padding: 5px 10px;
+        text-align: center;
+        -webkit-transition: all .25s ease;
+        -o-transition: all .25s ease;
+        transition: all .25s ease;
+        text-decoration: none
+    }
+    .girls_btn:focus,
+    .girls_btn:hover {
+        background: #4fa7d1;
+        color: #fff
+    }
+    #flag,
+    #rightButton,
+    #switchCameraBtn {
+        z-index: 1
+    }
+}
+@media only screen and (min-width: 1100px) {
+    #headerDiv {
+        width: calc(100% - 460px)
+    }
+    .chatDiv {
+        width: 455px
+    }
+}
+@media only screen and (min-width: 1580px) {
+    #cntr_lst li {
+        padding: 5px 10px;
+        font-size: 18px
+    }
+    #headerDiv {
+        width: calc(100% - 530px)
+    }
+    .chatDiv {
+        width: 525px
+    }
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 105000;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 500px;
+    -webkit-overflow-scrolling: touch;
+    outline: 0
+}
+.fa,
+.flag,
+.flag:before,
+span.emoji {
+    display: inline-block
+}
+.modal.fade .modal-dialog {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out
+}
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0)
+}
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px
+}
+.modal-content {
+    position: relative;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0
+}
+.modal-backdrop {
+    position: fixed;
+    z-index: 104000;
+    background-color: #000;
+    width: 100%;
+    height: 100%
+}
+.modal-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+.modal-backdrop.in {
+    opacity: .5;
+    filter: alpha(opacity=50)
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5
+}
+.modal-header .close {
+    margin-top: -2px
+}
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143
+}
+.modal-body {
+    border-radius: 5px 5px 0 0;
+    background: #fff;
+    position: relative;
+    padding: 15px
+}
+.modal-footer {
+    background: #efefef;
+    border-top: 1px solid #e5e5e5;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 15px;
+    text-align: right
+}
+.btn-default.orange_btn {
+    background: #82b666;
+    color: #fff!important
+}
+.modal-footer .btn+.btn {
+    margin-left: 5px;
+    margin-bottom: 0
+}
+.modal-footer .btn-group .btn+.btn {
+    margin-left: -1px
+}
+.modal-footer .btn-block+.btn-block {
+    margin-left: 0
+}
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll
+}
+#flag,
+.emoji-menu,
+.nano {
+    overflow: hidden
+}
+@font-face {
+    font-family: FontAwesome;
+    src: url(../font/fontello.eot?38049577);
+    src: url(../font/fontello.eot?38049577#iefix) format('embedded-opentype'), url(../font/fontello.woff2?38049577) format('woff2'), url(../font/fontello.woff?38049577) format('woff'), url(../font/fontello.ttf?38049577) format('truetype'), url(../font/fontello.svg?38049577#fontello) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+.fa {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.fa-eye-off:before {
+    content: '\e801'
+}
+.fa-videocam:before {
+    content: '\e800'
+}
+.fa-arrows-cw:before {
+    content: '\e802'
+}
+.fa-right-dir:before {
+    content: '\e803'
+}
+.fa-globe:before {
+    content: '\e804'
+}
+.fa-times:before {
+    content: '\e806'
+}
+.fa-flag:before {
+    content: '\e807'
+}
+.fa-volume-up:before {
+    content: '\e809'
+}
+.fa-chat-empty:before {
+    content: '\f0e6'
+}
+.fa-smile-o:before {
+    content: '\f118'
+}
+.fa-bug:before {
+    content: '\f188'
+}
+.fa-venus:before {
+    content: '\f221'
+}
+.fa-mars:before {
+    content: '\f222'
+}
+.fa-venus-mars:before {
+    content: '\f228'
+}
+#flag {
+    margin: 1px 5px 0 12px;
+    max-width: 180px;
+    text-overflow: ellipsis
+}
+.flag {
+    position: relative
+}
+.flag:before {
+    content: ' ';
+    width: 16px;
+    height: 11px;
+    background: url(../img/flags.png) no-repeat;
+    margin-right: 5px
+}
+.flag.flag-gw:before {
+    background-position: -144px -55px
+}
+.flag.flag-gu:before {
+    background-position: -128px -55px
+}
+.flag.flag-gt:before {
+    background-position: -112px -55px
+}
+.flag.flag-gs:before {
+    background-position: -96px -55px
+}
+.flag.flag-gr:before {
+    background-position: -80px -55px
+}
+.flag.flag-gq:before {
+    background-position: -64px -55px
+}
+.flag.flag-gp:before {
+    background-position: -48px -55px
+}
+.flag.flag-gy:before {
+    background-position: -160px -55px
+}
+.flag.flag-gg:before {
+    background-position: -208px -44px
+}
+.flag.flag-gf:before {
+    background-position: -192px -44px
+}
+.flag.flag-ge:before {
+    background-position: -176px -44px
+}
+.flag.flag-gd:before {
+    background-position: -160px -44px
+}
+.flag.flag-gb:before {
+    background-position: -144px -44px
+}
+.flag.flag-ga:before {
+    background-position: -128px -44px
+}
+.flag.flag-gn:before {
+    background-position: -32px -55px
+}
+.flag.flag-gm:before {
+    background-position: -16px -55px
+}
+.flag.flag-gl:before {
+    background-position: 0 -55px
+}
+.flag.flag-gi:before {
+    background-position: -240px -44px
+}
+.flag.flag-gh:before {
+    background-position: -224px -44px
+}
+.flag.flag-lb:before {
+    background-position: -208px -77px
+}
+.flag.flag-lc:before {
+    background-position: -224px -77px
+}
+.flag.flag-la:before {
+    background-position: -192px -77px
+}
+.flag.flag-tv:before {
+    background-position: -32px -154px
+}
+.flag.flag-tw:before {
+    background-position: -48px -154px
+}
+.flag.flag-tt:before {
+    background-position: -16px -154px
+}
+.flag.flag-tr:before {
+    background-position: 0 -154px
+}
+.flag.flag-lk:before {
+    background-position: 0 -88px
+}
+.flag.flag-li:before {
+    background-position: -240px -77px
+}
+.flag.flag-lv:before {
+    background-position: -80px -88px
+}
+.flag.flag-to:before {
+    background-position: -240px -143px
+}
+.flag.flag-lt:before {
+    background-position: -48px -88px
+}
+.flag.flag-lu:before {
+    background-position: -64px -88px
+}
+.flag.flag-lr:before {
+    background-position: -16px -88px
+}
+.flag.flag-ls:before {
+    background-position: -32px -88px
+}
+.flag.flag-th:before {
+    background-position: -128px -143px
+}
+.flag.flag-tf:before {
+    background-position: -96px -143px
+}
+.flag.flag-tg:before {
+    background-position: -112px -143px
+}
+.flag.flag-td:before {
+    background-position: -80px -143px
+}
+.flag.flag-tc:before {
+    background-position: -64px -143px
+}
+.flag.flag-ly:before {
+    background-position: -96px -88px
+}
+.flag.flag-do:before {
+    background-position: -112px -33px
+}
+.flag.flag-dm:before {
+    background-position: -96px -33px
+}
+.flag.flag-dj:before {
+    background-position: -64px -33px
+}
+.flag.flag-dk:before {
+    background-position: -80px -33px
+}
+.flag.flag-um:before {
+    background-position: -112px -154px
+}
+.flag.flag-de:before {
+    background-position: -48px -33px
+}
+.flag.flag-ye:before {
+    background-position: -96px -165px
+}
+.flag.flag-dz:before {
+    background-position: -128px -33px
+}
+.flag.flag-uy:before {
+    background-position: -144px -154px
+}
+.flag.flag-yt:before {
+    background-position: -112px -165px
+}
+.flag.flag-catalonia:before {
+    background-position: -32px -22px
+}
+.flag.flag-vu:before {
+    background-position: -16px -165px
+}
+.flag.flag-qa:before {
+    background-position: -128px -121px
+}
+.flag.flag-tm:before {
+    background-position: -208px -143px
+}
+.flag.flag-england:before {
+    background-position: -208px -33px
+}
+.flag.flag-eh:before {
+    background-position: -192px -33px
+}
+.flag.flag-wf:before {
+    background-position: -48px -165px
+}
+.flag.flag-ee:before {
+    background-position: -160px -33px
+}
+.flag.flag-eg:before {
+    background-position: -176px -33px
+}
+.flag.flag-za:before {
+    background-position: -128px -165px
+}
+.flag.flag-ec:before {
+    background-position: -144px -33px
+}
+.flag.flag-us:before {
+    background-position: -128px -154px
+}
+.flag.flag-eu:before {
+    background-position: -16px -44px
+}
+.flag.flag-et:before {
+    background-position: 0 -44px
+}
+.flag.flag-zw:before {
+    background-position: -176px -165px
+}
+.flag.flag-es:before {
+    background-position: -240px -33px
+}
+.flag.flag-er:before {
+    background-position: -224px -33px
+}
+.flag.flag-ru:before {
+    background-position: -192px -121px
+}
+.flag.flag-rw:before {
+    background-position: -208px -121px
+}
+.flag.flag-rs:before {
+    background-position: -176px -121px
+}
+.flag.flag-re:before {
+    background-position: -144px -121px
+}
+.flag.flag-it:before {
+    background-position: -176px -66px
+}
+.flag.flag-ro:before {
+    background-position: -160px -121px
+}
+.flag.flag-tk:before {
+    background-position: -176px -143px
+}
+.flag.flag-tz:before {
+    background-position: -64px -154px
+}
+.flag.flag-bd:before {
+    background-position: -16px -11px
+}
+.flag.flag-be:before {
+    background-position: -32px -11px
+}
+.flag.flag-bf:before {
+    background-position: -48px -11px
+}
+.flag.flag-bg:before {
+    background-position: -64px -11px
+}
+.flag.flag-vg:before {
+    background-position: -224px -154px
+}
+.flag.flag-ba:before {
+    background-position: -240px 0
+}
+.flag.flag-bb:before {
+    background-position: 0 -11px
+}
+.flag.flag-tibet:before {
+    background-position: -144px -143px
+}
+.flag.flag-bm:before {
+    background-position: -112px -11px
+}
+.flag.flag-bn:before {
+    background-position: -128px -11px
+}
+.flag.flag-bo:before {
+    background-position: -144px -11px
+}
+.flag.flag-bh:before {
+    background-position: -80px -11px
+}
+.flag.flag-bj:before {
+    background-position: -96px -11px
+}
+.flag.flag-bt:before {
+    background-position: -192px -11px
+}
+.flag.flag-jm:before {
+    background-position: -208px -66px
+}
+.flag.flag-bv:before {
+    background-position: -208px -11px
+}
+.flag.flag-bw:before {
+    background-position: -224px -11px
+}
+.flag.flag-ws:before {
+    background-position: -64px -165px
+}
+.flag.flag-br:before {
+    background-position: -160px -11px
+}
+.flag.flag-bs:before {
+    background-position: -176px -11px
+}
+.flag.flag-je:before {
+    background-position: -192px -66px
+}
+.flag.flag-by:before {
+    background-position: -240px -11px
+}
+.flag.flag-bz:before {
+    background-position: 0 -22px
+}
+.flag.flag-tn:before {
+    background-position: -224px -143px
+}
+.flag.flag-om:before {
+    background-position: -144px -110px
+}
+.flag.flag-zm:before {
+    background-position: -160px -165px
+}
+.flag.flag-ua:before {
+    background-position: -80px -154px
+}
+.flag.flag-jo:before {
+    background-position: -224px -66px
+}
+.flag.flag-mz:before {
+    background-position: -192px -99px
+}
+.flag.flag-ck:before {
+    background-position: -128px -22px
+}
+.flag.flag-xk:before {
+    background-position: -80px -165px
+}
+.flag.flag-ci:before {
+    background-position: -112px -22px
+}
+.flag.flag-ch:before {
+    background-position: -96px -22px
+}
+.flag.flag-co:before {
+    background-position: -192px -22px
+}
+.flag.flag-cn:before {
+    background-position: -176px -22px
+}
+.flag.flag-cm:before {
+    background-position: -160px -22px
+}
+.flag.flag-cl:before {
+    background-position: -144px -22px
+}
+.flag.flag-ca:before {
+    background-position: -16px -22px
+}
+.flag.flag-cg:before {
+    background-position: -80px -22px
+}
+.flag.flag-cf:before {
+    background-position: -64px -22px
+}
+.flag.flag-cd:before {
+    background-position: -48px -22px
+}
+.flag.flag-cz:before {
+    background-position: -32px -33px
+}
+.flag.flag-cy:before {
+    background-position: -16px -33px
+}
+.flag.flag-vc:before {
+    background-position: -192px -154px
+}
+.flag.flag-cr:before {
+    background-position: -208px -22px
+}
+.flag.flag-cw:before {
+    background-position: 0 -33px
+}
+.flag.flag-cv:before {
+    background-position: -240px -22px
+}
+.flag.flag-cu:before {
+    background-position: -224px -22px
+}
+.flag.flag-ve:before {
+    background-position: -208px -154px
+}
+.flag.flag-pr:before {
+    background-position: -48px -121px
+}
+.flag.flag-ps:before {
+    background-position: -64px -121px
+}
+.flag.flag-pw:before {
+    background-position: -96px -121px
+}
+.flag.flag-pt:before {
+    background-position: -80px -121px
+}
+.flag.flag-py:before {
+    background-position: -112px -121px
+}
+.flag.flag-tl:before {
+    background-position: -192px -143px
+}
+.flag.flag-iq:before {
+    background-position: -128px -66px
+}
+.flag.flag-pa:before {
+    background-position: -160px -110px
+}
+.flag.flag-pf:before {
+    background-position: -192px -110px
+}
+.flag.flag-pg:before {
+    background-position: -208px -110px
+}
+.flag.flag-pe:before {
+    background-position: -176px -110px
+}
+.flag.flag-pk:before {
+    background-position: -240px -110px
+}
+.flag.flag-ph:before {
+    background-position: -224px -110px
+}
+.flag.flag-pn:before {
+    background-position: -32px -121px
+}
+.flag.flag-kurdistan:before {
+    background-position: -128px -77px
+}
+.flag.flag-pl:before {
+    background-position: 0 -121px
+}
+.flag.flag-pm:before {
+    background-position: -16px -121px
+}
+.flag.flag-hr:before {
+    background-position: -224px -55px
+}
+.flag.flag-ht:before {
+    background-position: -240px -55px
+}
+.flag.flag-hu:before {
+    background-position: 0 -66px
+}
+.flag.flag-hk:before {
+    background-position: -176px -55px
+}
+.flag.flag-hn:before {
+    background-position: -208px -55px
+}
+.flag.flag-vn:before {
+    background-position: 0 -165px
+}
+.flag.flag-hm:before {
+    background-position: -192px -55px
+}
+.flag.flag-jp:before {
+    background-position: -240px -66px
+}
+.flag.flag-wales:before {
+    background-position: -32px -165px
+}
+.flag.flag-me:before {
+    background-position: -160px -88px
+}
+.flag.flag-md:before {
+    background-position: -144px -88px
+}
+.flag.flag-mg:before {
+    background-position: -176px -88px
+}
+.flag.flag-ma:before {
+    background-position: -112px -88px
+}
+.flag.flag-mc:before {
+    background-position: -128px -88px
+}
+.flag.flag-uz:before {
+    background-position: -160px -154px
+}
+.flag.flag-mm:before {
+    background-position: -240px -88px
+}
+.flag.flag-ml:before {
+    background-position: -224px -88px
+}
+.flag.flag-mo:before {
+    background-position: -16px -99px
+}
+.flag.flag-mn:before {
+    background-position: 0 -99px
+}
+.flag.flag-mh:before {
+    background-position: -192px -88px
+}
+.flag.flag-mk:before {
+    background-position: -208px -88px
+}
+.flag.flag-mu:before {
+    background-position: -112px -99px
+}
+.flag.flag-mt:before {
+    background-position: -96px -99px
+}
+.flag.flag-mw:before {
+    background-position: -144px -99px
+}
+.flag.flag-mv:before {
+    background-position: -128px -99px
+}
+.flag.flag-mq:before {
+    background-position: -48px -99px
+}
+.flag.flag-mp:before {
+    background-position: -32px -99px
+}
+.flag.flag-ms:before {
+    background-position: -80px -99px
+}
+.flag.flag-mr:before {
+    background-position: -64px -99px
+}
+.flag.flag-im:before {
+    background-position: -80px -66px
+}
+.flag.flag-ug:before {
+    background-position: -96px -154px
+}
+.flag.flag-my:before {
+    background-position: -176px -99px
+}
+.flag.flag-mx:before {
+    background-position: -160px -99px
+}
+.flag.flag-il:before {
+    background-position: -64px -66px
+}
+.flag.flag-va:before {
+    background-position: -176px -154px
+}
+.flag.flag-sa:before {
+    background-position: -224px -121px
+}
+.flag.flag-ae:before {
+    background-position: -16px 0
+}
+.flag.flag-ad:before {
+    background-position: 0 0
+}
+.flag.flag-ag:before {
+    background-position: -48px 0
+}
+.flag.flag-af:before {
+    background-position: -32px 0
+}
+.flag.flag-ai:before {
+    background-position: -64px 0
+}
+.flag.flag-vi:before {
+    background-position: -240px -154px
+}
+.flag.flag-is:before {
+    background-position: -160px -66px
+}
+.flag.flag-ir:before {
+    background-position: -144px -66px
+}
+.flag.flag-am:before {
+    background-position: -96px 0
+}
+.flag.flag-al:before {
+    background-position: -80px 0
+}
+.flag.flag-ao:before {
+    background-position: -128px 0
+}
+.flag.flag-an:before {
+    background-position: -112px 0
+}
+.flag.flag-as:before {
+    background-position: -160px 0
+}
+.flag.flag-ar:before {
+    background-position: -144px 0
+}
+.flag.flag-au:before {
+    background-position: -192px 0
+}
+.flag.flag-at:before {
+    background-position: -176px 0
+}
+.flag.flag-aw:before {
+    background-position: -208px 0
+}
+.flag.flag-in:before {
+    background-position: -96px -66px
+}
+.flag.flag-ic:before {
+    background-position: -16px -66px
+}
+.flag.flag-az:before {
+    background-position: -224px 0
+}
+.flag.flag-ie:before {
+    background-position: -48px -66px
+}
+.flag.flag-id:before {
+    background-position: -32px -66px
+}
+.flag.flag-zanzibar:before {
+    background-position: -144px -165px
+}
+.flag.flag-ni:before {
+    background-position: -32px -110px
+}
+.flag.flag-nl:before {
+    background-position: -48px -110px
+}
+.flag.flag-no:before {
+    background-position: -64px -110px
+}
+.flag.flag-na:before {
+    background-position: -208px -99px
+}
+.flag.flag-nc:before {
+    background-position: -224px -99px
+}
+.flag.flag-scotland:before {
+    background-position: -16px -132px
+}
+.flag.flag-ne:before {
+    background-position: -240px -99px
+}
+.flag.flag-nf:before {
+    background-position: 0 -110px
+}
+.flag.flag-ng:before {
+    background-position: -16px -110px
+}
+.flag.flag-nz:before {
+    background-position: -128px -110px
+}
+.flag.flag-sh:before {
+    background-position: -80px -132px
+}
+.flag.flag-np:before {
+    background-position: -80px -110px
+}
+.flag.flag-so:before {
+    background-position: -176px -132px
+}
+.flag.flag-nr:before {
+    background-position: -96px -110px
+}
+.flag.flag-nu:before {
+    background-position: -112px -110px
+}
+.flag.flag-somaliland:before {
+    background-position: -192px -132px
+}
+.flag.flag-fr:before {
+    background-position: -112px -44px
+}
+.flag.flag-io:before {
+    background-position: -112px -66px
+}
+.flag.flag-sv:before {
+    background-position: 0 -143px
+}
+.flag.flag-sb:before {
+    background-position: -240px -121px
+}
+.flag.flag-fi:before {
+    background-position: -32px -44px
+}
+.flag.flag-fj:before {
+    background-position: -48px -44px
+}
+.flag.flag-fk:before {
+    background-position: -64px -44px
+}
+.flag.flag-fm:before {
+    background-position: -80px -44px
+}
+.flag.flag-fo:before {
+    background-position: -96px -44px
+}
+.flag.flag-tj:before {
+    background-position: -160px -143px
+}
+.flag.flag-sz:before {
+    background-position: -48px -143px
+}
+.flag.flag-sy:before {
+    background-position: -32px -143px
+}
+.flag.flag-sx:before {
+    background-position: -16px -143px
+}
+.flag.flag-kg:before {
+    background-position: -16px -77px
+}
+.flag.flag-ke:before {
+    background-position: 0 -77px
+}
+.flag.flag-ss:before {
+    background-position: -224px -132px
+}
+.flag.flag-sr:before {
+    background-position: -208px -132px
+}
+.flag.flag-ki:before {
+    background-position: -48px -77px
+}
+.flag.flag-kh:before {
+    background-position: -32px -77px
+}
+.flag.flag-kn:before {
+    background-position: -80px -77px
+}
+.flag.flag-km:before {
+    background-position: -64px -77px
+}
+.flag.flag-st:before {
+    background-position: -240px -132px
+}
+.flag.flag-sk:before {
+    background-position: -112px -132px
+}
+.flag.flag-kr:before {
+    background-position: -112px -77px
+}
+.flag.flag-si:before {
+    background-position: -96px -132px
+}
+.flag.flag-kp:before {
+    background-position: -96px -77px
+}
+.flag.flag-kw:before {
+    background-position: -144px -77px
+}
+.flag.flag-sn:before {
+    background-position: -160px -132px
+}
+.flag.flag-sm:before {
+    background-position: -144px -132px
+}
+.flag.flag-sl:before {
+    background-position: -128px -132px
+}
+.flag.flag-sc:before {
+    background-position: 0 -132px
+}
+.flag.flag-kz:before {
+    background-position: -176px -77px
+}
+.flag.flag-ky:before {
+    background-position: -160px -77px
+}
+.flag.flag-sg:before {
+    background-position: -64px -132px
+}
+.flag.flag-se:before {
+    background-position: -48px -132px
+}
+.flag.flag-sd:before {
+    background-position: -32px -132px
+}
+@media only screen and (max-width: 480px) {
+    #flag {
+        max-width: 130px
+    }
+}
+span.emoji {
+    -moz-box-orient: vertical;
+    width: 1em;
+    height: 1em;
+    background-size: 1em;
+    background-repeat: no-repeat
+}
+span.emoji-sizer {
+    line-height: .81em;
+    font-size: 1em;
+    margin: -2px 0
+}
+span.emoji-outer {
+    display: -moz-inline-box;
+    display: inline-block;
+    height: 1em;
+    width: 1em
+}
+span.emoji-inner {
+    display: -moz-inline-box;
+    display: inline-block;
+    width: 100%;
+    height: 100%
+}
+img.emoji {
+    width: 1em;
+    height: 1em
+}
+.emoji-picker-container {
+    margin: 0;
+    position: relative
+}
+.emoji-picker-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 20px;
+    opacity: .7;
+    z-index: 100;
+    transition: none;
+    color: #000;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none
+}
+.emoji-picker-icon:hover {
+    opacity: 1
+}
+.emoji-wysiwyg-editor:empty:before {
+    content: attr(placeholder);
+    color: #9aa2ab
+}
+.emoji-wysiwyg-editor:active:before,
+.emoji-wysiwyg-editor:focus:before {
+    content: none
+}
+.emoji-wysiwyg-editor {
+    background: #fff;
+    padding: 8px 35px 8px 8px;
+    margin-bottom: 0;
+    overflow: hidden;
+    height: 35px;
+    border: 1px solid #d2dbe3;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -webkit-user-select: text;
+    word-wrap: break-word
+}
+.emoji-wysiwyg-editor.single-line-editor {
+    min-height: 35px;
+    height: inherit
+}
+.emoji-wysiwyg-editor img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: -3px 0 0
+}
+.emoji-menu {
+    position: absolute;
+    left: -180px!important;
+    z-index: 999;
+    width: 225px;
+    border: 1px solid #dfdfdf;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
+}
+.emoji-items-wrap1 {
+    background: #fff;
+    padding: 5px 2px 5px 5px
+}
+.emoji-items-wrap1 .emoji-menu-tabs {
+    width: 100%;
+    margin-bottom: 8px;
+    margin-top: 3px
+}
+.emoji-items-wrap1 .emoji-menu-tabs td {
+    text-align: center;
+    color: #fff;
+    line-height: 0
+}
+.emoji-menu-tabs .emoji-menu-tab {
+    display: inline-block;
+    width: 24px;
+    height: 29px;
+    background: url(../emoji/img/IconsetSmiles.png) no-repeat;
+    background-size: 42px 350px;
+    border: 0
+}
+.is_1x .emoji-menu-tabs .emoji-menu-tab {
+    background-image: url(../emoji/img/IconsetSmiles_1x.png)
+}
+.emoji-menu-tabs .icon-recent {
+    background-position: -9px -306px
+}
+.emoji-menu-tabs .icon-recent-selected {
+    background-position: -9px -277px
+}
+.emoji-menu-tabs .icon-smile {
+    background-position: -9px -34px
+}
+.emoji-menu-tabs .icon-smile-selected {
+    background-position: -9px -5px
+}
+.emoji-menu-tabs .icon-flower {
+    background-position: -9px -145px
+}
+.emoji-menu-tabs .icon-flower-selected {
+    background-position: -9px -118px
+}
+.emoji-menu-tabs .icon-bell {
+    background-position: -9px -89px
+}
+.emoji-menu-tabs .icon-bell-selected {
+    background-position: -9px -61px
+}
+.emoji-menu-tabs .icon-car {
+    background-position: -9px -196px
+}
+.emoji-menu-tabs .icon-car-selected {
+    background-position: -9px -170px
+}
+.emoji-menu-tabs .icon-grid {
+    background-position: -9px -248px
+}
+.emoji-menu-tabs .icon-grid-selected {
+    background-position: -9px -222px
+}
+.emoji-menu-tabs .icon-bell,
+.emoji-menu-tabs .icon-car,
+.emoji-menu-tabs .icon-flower,
+.emoji-menu-tabs .icon-grid,
+.emoji-menu-tabs .icon-smile {
+    opacity: .7
+}
+.emoji-menu-tabs .icon-bell:hover,
+.emoji-menu-tabs .icon-car:hover,
+.emoji-menu-tabs .icon-flower:hover,
+.emoji-menu-tabs .icon-grid:hover,
+.emoji-menu-tabs .icon-smile:hover {
+    opacity: 1
+}
+.emoji-menu .emoji-items-wrap {
+    position: relative;
+    height: 174px
+}
+.emoji-menu .emoji-items {
+    padding-right: 8px;
+    outline: 0!important
+}
+.emoji-menu img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    border: 0
+}
+.emoji-menu .emoji-items a {
+    margin: -1px 0 0 -1px;
+    padding: 5px;
+    display: block;
+    float: left;
+    border-radius: 2px;
+    border: 0
+}
+.emoji-menu .emoji-items a:hover {
+    background-color: #edf2f5
+}
+.emoji-menu:after {
+    content: ' ';
+    display: block;
+    clear: left
+}
+.emoji-menu a .label {
+    display: none
+}
+.nano {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+.nano>.nano-content,
+.nano>.nano-pane {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0
+}
+.nano>.nano-content {
+    overflow: scroll;
+    overflow-x: hidden;
+    left: 0
+}
+.nano>.nano-content:focus {
+    outline: dotted thin
+}
+.nano>.nano-content::-webkit-scrollbar {
+    display: none
+}
+.has-scrollbar>.nano-content::-webkit-scrollbar {
+    display: block
+}
+.nano>.nano-pane {
+    background: rgba(0, 0, 0, .25);
+    width: 10px;
+    visibility: hidden\9;
+    opacity: .01;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px
+}
+.nano>.nano-pane>.nano-slider {
+    background: #444;
+    background: rgba(0, 0, 0, .5);
+    position: relative;
+    margin: 0 1px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px
+}
+.nano-pane.active,
+.nano-pane.flashed,
+.nano:hover>.nano-pane {
+    visibility: visible\9;
+    opacity: .99
+}

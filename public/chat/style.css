@@ -1,0 +1,275 @@
+body{
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+#remote_video{
+	position: relative;
+}
+#local_video{
+	position: absolute;
+	top: 73%;
+	right: 75%;
+	border-radius: 50%;
+}
+.video-section{
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: #CECECE;
+	width: 64%;
+}
+.chat-section{
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: #FFFFFF;
+	width: 34%;
+}
+#next_connect{
+	position: absolute;
+	top: 50%;
+    left: 90%;
+}
+.me-message{
+    font-size: 14px;
+    background-color: rgb(239, 255, 241);
+     padding-right: 10px !important;
+    padding-left: 10px !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    display: inline-block;
+    word-break: break-word;
+        border-radius: 40px;
+}
+.you-message{
+    font-size: 14px;
+    background-color: rgb(247, 247, 214);
+    padding: 10px 10px !important;
+     border-left: 0 !important; 
+     display: inline-block;
+    word-break: break-word;
+        border-radius: 40px;
+}
+#conversation_section{
+	position: relative;
+}
+#conversation_footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.spin_loader{
+    font-size: 100px !important;
+    position: absolute;
+    right: 50%;
+    bottom: 40%;
+
+}
+#conversation{
+	overflow: auto;
+	overflow-x: hidden;
+}
+.emoji-menu{
+	bottom: 0px;
+}
+.emoji-wysiwyg-editor{
+	    display: inline-block;
+    word-break: break-word;
+}
+#conversation blockquote.pull-right{
+	 border-right: 0 !important;
+}
+.panel-footer{
+	  padding: 3px;
+    margin: 0 auto;
+    background-color: #7b7b7b;
+     border-color: #505050; 
+     border-radius: 0 0 2px 2px; 
+}
+.me-message-li{
+	padding-left: 10px;
+}
+.you-message-li{
+	padding-right: 10px;
+}
+.chat-section-only{
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: #FFFFFF;
+	    border-style: solid;
+    border-color: #000;
+    border-width:1px;
+}
+#conversation_section_only{
+	position: relative;;
+}
+#conversation_only{
+	overflow: auto;
+	overflow-x: hidden;
+}
+#conversation_footer_only{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.live_status_button{
+	width: 100%;
+	border-radius: 10px;
+	margin-left: 10px;
+}
+.video-button-section{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+.video-button-inner{
+	background: rgba(255,255,255,.5); 
+    margin: 0 -2px;
+    padding: 7px 15px;
+    position: relative;
+    font-size: 38px;
+    color: #309dff;
+    border: 0;
+    outline: 0;
+}
+.over-video-button{
+	padding-right: 15px;
+}
+.pointer{
+	cursor: pointer;
+}
+
+
+
+/*media query*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+#conversation_section{
+	height: 300px;
+}
+#remote_video{
+	height: 300px;
+
+}
+}
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+#conversation_section{
+	height: 250px;
+}
+#remote_video{
+	height: 250px;
+
+}
+
+}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+#conversation_section{
+	height: 360px;
+	display: none;
+}
+#remote_video{
+	height: 360px;
+	width: 100%;
+
+}
+.video-section{
+	width: 100%;
+}
+#local_video{
+  height: 100px;
+  	top: 60%;
+	right: 55%;
+}
+#next_connect{
+	top: 40%;
+    left: 80%;
+}
+}
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* STYLES GO HERE */
+}
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+#conversation_section{
+	height: 610px;
+	display: block;
+}
+#remote_video{
+	height: 610px;
+
+}
+#conversation{
+max-height: 540px;
+}
+#local_video{
+height: 150px;
+top: 73%;
+right: 75%;
+}
+#conversation_section_only{
+	height: 610px;
+}
+#conversation_only{
+	max-height: 540px;
+}
+
+}
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+}
