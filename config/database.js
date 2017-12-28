@@ -3,7 +3,7 @@ module.exports = {
     'connection': {
         'host': 'localhost',
         'user': 'root',
-        'password': ''
+        'password': 'indradev'
     },
 	'database': 'tss_abnoy',
 };
