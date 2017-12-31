@@ -1,4 +1,5 @@
 // app/routes.js
+var fs = require('fs');
 chat_node_lists=require('./models/chat_node_lists'); //add modles
 node_lists=require('./models/node_lists'); //add modles
 module.exports = function(io) {
@@ -6,6 +7,8 @@ module.exports = function(io) {
     io.sockets.on('connection', function(socket){
     ++total_no;//new node increaments
     console.log('a new node connected: ' + total_no);
+     //write total actve
+     fs.writeFile("active_node.json",total_no,function(err){if(err){console.log(err)}});
     //hand shake first==============================================================
     //io.to(socket.id).emit('hand_shake',{});
     socket.emit('hand_shake',{'socket_id':socket.id});

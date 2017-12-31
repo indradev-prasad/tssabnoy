@@ -56,12 +56,14 @@ body{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	margin-left: 10px;
 }
 .spin_loader{
-    font-size: 100px !important;
     position: absolute;
     right: 50%;
     bottom: 40%;
+    width: 150px;
+    height: 150px;
 
 }
 #conversation{
@@ -128,7 +130,7 @@ body{
     padding: 7px 15px;
     position: relative;
     font-size: 38px;
-    color: #309dff;
+    color: #2D84DF;
     border: 0;
     outline: 0;
 }
@@ -138,6 +140,14 @@ body{
 .pointer{
 	cursor: pointer;
 }
+.spin_loader{
+    background-image:url('../assets/images/loader.gif');
+     background-repeat: no-repeat;
+}
+.video-imgs img{
+	margin-bottom: 13px;
+}
+
 
 
 

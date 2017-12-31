@@ -1,47 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head> 
-    <title>Chat</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-  <body>
-    <!-- Top menu -->
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-<!--           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button> -->
-
-          <div class="logo-section logo"></div>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-<!--         <div class="navbar-collapse collapse" id="top-navbar-1" aria-expanded="false" style="height: 0px;">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-             <li><a href="#">Contact us</a></li>
-          </ul>
-        </div> -->
-      </div>
-    </nav>
-        
+<%- include include/header.ejs %>        
         <!-- Top content -->
    <div class="iframe-container">
         <iframe src="" frameborder="0" id="myiframe" name="myiframe" class=""></iframe>
-        <div class="welcomescreen">
+        <div class="welcomescreen" id="welcomescreen">
               <div class="col-md-12">
                 <div class="col-md-offset-3 col-md-6 welcomescreen-inner">
-                  <div class="form-top"><a class="" href="/" target="_blank"><img src="assets/images/TSS-ABNOY-LOGO.png" alt="TssAbnoy" width="100" height="50"></a> <h1>Cam to Cam Chat</h1> <h2>Free - Anonymous - Secure</h2> <h3>TssAbnoy is a free video chat app for meeting strangers</h3> <h4 id="livenode">Strangers online: <span>26150</span></h4> </div>
+                  <div class="form-top"><a class="" href="/"><img src="../assets/images/TSS-ABNOY-LOGO.png" alt="TssAbnoy" width="50" height="50"></a> <h1>Cam to Cam Chat</h1> <h2>Free - Anonymous - Secure</h2> <h3>TssAbnoy is a free video chat app for meeting strangers</h3> <h4 id="livenode">Strangers online: <span><%=data.total; %></span></h4> </div>
                   <div class="welcom-btn-grp">
                   <button type="button" name="" class="btn btn-primary welcome-btn">I am over 18-Start Chat</button>
                    <a href="https://www.google.com/" name="" class="btn leave-btn">Leave</a>
@@ -52,6 +16,19 @@
               </div>
         </div>
       </div>
+           <input type="button" id="reload" value="reload" style="display: none;">
+           <input type="button" id="leave_room" value="reload" style="display: none;">
+     <script type="text/javascript">
+      document.querySelector("#reload").addEventListener('click',function(){
+       var iframe = document.getElementById('myiframe');
+          iframe.src = iframe.src;
+      });
+            document.querySelector("#leave_room").addEventListener('click',function(){
+              var iframe = document.getElementById('myiframe');
+                iframe.src ='';
+              window.location.href="https://google.com";
+      });
+     </script>
           <div class="container">
             <div class="panel">
             <div class="panel-section">
@@ -63,49 +40,4 @@
 
           </div>
               <!-- Footer -->
-<footer>
-  <div class="container">
-    <form>
-      <div class="col-md-12">
-     <div class="form-group col-md-6 col-md-offset-3">
-         <h3 class="contact-us-heading">Contact Us</h3>
-    </div>
-    <div class="form-group col-md-6 col-md-offset-3">
-      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-    </div>
-    <div class="form-group col-md-6 col-md-offset-3">
-      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-    </div>
-    <div class="form-group col-md-6 col-md-offset-3">
-      <textarea type="email" class="form-control" rows="4" id="comment" name="comment" placeholder="Comments"></textarea>
-    </div>
-        <div class="form-group col-md-6 col-md-offset-3">
-        <button type="button" class="btn btn-primary pull-right">Submit</button>
-    </div>
-  </div>
-</form>
-    <div class="col-md-12">
-    <div class="btm-footer">
-      <ul class="soc-footer"><li><a class="fa fa-facebook" title="Facebook" href="https://www.facebook.com/tssabnoy" target="_blank">
-      </a></li><li><a class="fa fa-twitter" title="Twitter" href="https://twitter.com/tssabnoy" target="_blank">
-      </a></li>
-      <li><a class="fa fa-google-plus" title="Twitter" href="https://twitter.com/tssabnoy" target="_blank">
-      </a></li>
-    </ul>
-      <div class="copy"><p>© 2017-2018 TssAbnoy.</p></div>
-    </div>
-  </div>
-    </div>
-</footer>
-     <input type="button" id="reload" value="reload" style="display: none;">
-     <script type="text/javascript">
-      document.querySelector("#reload").addEventListener('click',function(){
-       var iframe = document.getElementById('myiframe');
-          iframe.src = iframe.src;
-      });
-     </script>
-      <script src="assets/js/jquery.min.js"></script>
-       <script src="assets/js/bootstrap.min.js"></script>
-      <script src="assets/js/iframe_chat.js"></script>
-  </body>
-</html>
+              <%- include include/footer.ejs %>       

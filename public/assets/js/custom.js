@@ -4,4 +4,7 @@ $(document).ready(function(){
 		$(".welcomescreen").hide();
          $("#myiframe").attr('src','chat/iframe.html');
 	});
+	$(document).on('click','.logo',function(){
+          window.location.href="/";
+	});
 });

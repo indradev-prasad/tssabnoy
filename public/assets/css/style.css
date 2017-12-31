@@ -151,11 +151,11 @@ footer ul li {
 }
 .logo{
     background-image:url('../images/TSS-ABNOY-LOGO.png');
-       background-size: 100px 50px;
+       background-size: 50px 50px;
 }
 .logo-section{
     height: 50px;
-    width: 100px;
+    width: 50px;
     cursor: pointer;
 }
 /*media query*/

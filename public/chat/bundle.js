@@ -2502,12 +2502,22 @@ document.querySelector('#send_button').addEventListener('click', function (ev) {
   document.querySelector('#next_connect').addEventListener('click', function (ev) {
       window.parent.document.getElementById('reload').click(); 
 })
+document.querySelector('#chatMessage').addEventListener('keypress', function (e) {
+                 var key = e.which || e.keyCode;
+               if (key === 13) { // 13 is enter
+                     document.querySelector("#send_button").click();
+                     }
+  })
+  document.querySelector('.leave_room').addEventListener('click', function (ev) {
+      window.parent.document.getElementById('leave_room').click(); 
+})
     }
 p.on('connect', function () {
   // console.log('CONNECT')
   connected=true;
   document.querySelector(".spin_loader").setAttribute('style','display:none;')
   document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
+  document.querySelector('#chatMessage').focus();
 })
 
 p.on('data', function (data) {
@@ -2550,13 +2560,13 @@ p.on('data', function (data) {
 }
 
 function message_handle(){
-  if((document.querySelector('.emoji-wysiwyg-editor').innerHTML=='')||(connected==false)){
+  if((document.querySelector('#chatMessage').value=='')||(connected==false)){
       return false;
   }
-   document.querySelector('#conversation').innerHTML=document.querySelector('#conversation').innerHTML+'<div class="clearfix me-message-li"><blockquote class="me-message pull-right">'+document.querySelector('.emoji-wysiwyg-editor').innerHTML+'</blockquote></div>';
-    p.send(document.querySelector('.emoji-wysiwyg-editor').innerHTML);
+   document.querySelector('#conversation').innerHTML=document.querySelector('#conversation').innerHTML+'<div class="clearfix me-message-li"><blockquote class="me-message pull-right">'+document.querySelector('#chatMessage').value+'</blockquote></div>';
+    p.send(document.querySelector('#chatMessage').value);
     document.getElementById('chatMessage').value='';
-    document.querySelector('.emoji-wysiwyg-editor').innerHTML='';
+    document.querySelector('#chatMessage').value='';
     var objDiv = document.getElementById("conversation");
      objDiv.scrollTop = objDiv.scrollHeight;
 }
@@ -2595,21 +2605,26 @@ function gotMediaError(error) {
                  document.querySelector("#conversation_only").innerHTML='';
      });
           document.querySelector("#send_button_only").addEventListener('click',function(){
-              if((document.querySelector('.emoji-wysiwyg-editor').innerHTML=='')||(check_chat_connected==false)||(stranger_node_id=='')){
+              if((document.querySelector('#chatMessage_only').value=='')||(check_chat_connected==false)||(stranger_node_id=='')){
                    return false;
               }
-              var message=document.querySelector('.emoji-wysiwyg-editor').innerHTML;
+              var message=document.querySelector('#chatMessage_only').value;
          document.querySelector('#conversation_only').innerHTML=document.querySelector('#conversation_only').innerHTML+'<div class="clearfix me-message-li"><blockquote class="me-message pull-right">'+message+'</blockquote></div>';
                document.getElementById('chatMessage_only').value='';
-               document.querySelector('.emoji-wysiwyg-editor').innerHTML='';
               var objDiv = document.getElementById("conversation_only");
                    objDiv.scrollTop = objDiv.scrollHeight;
                    socket.emit('chat_message_broadcast',{'stranger_node_id':stranger_node_id,'my_node_id':my_node_id,'message':message});
      });
+          document.querySelector('#chatMessage_only').addEventListener('keypress', function (e) {
+                 var key = e.which || e.keyCode;
+               if (key === 13) { // 13 is enter
+                     document.querySelector("#send_button_only").click();
+                     }
+             });
                 }
      function chat_connected(){
                 check_chat_connected=true;
-                document.querySelector('.emoji-wysiwyg-editor').focus();
+                document.querySelector('#chatMessage_only').focus();
                  document.querySelector("#send_button_only").removeAttribute('disabled','disabled')
      }
      function chat_disconnected(){
