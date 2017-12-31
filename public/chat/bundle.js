@@ -2433,6 +2433,7 @@ process.umask = function() { return 0; };
 
 },{}],8:[function(require,module,exports){
     var Peer = require('simple-peer')
+    var SITE_URL=document.location.origin
 //check webrct support or not
 var check_chat_olny=false;
 if (Peer.WEBRTC_SUPPORT) {
@@ -2459,7 +2460,7 @@ navigator.getUserMedia({ video: true, audio: true }, gotMedia, gotMediaError)
     var my_node_id='';
     var stranger_node_id='';
     var check_chat_connected=false;
-    var socket = io.connect('https://tssabnoy.com:8080');
+    var socket = io.connect(SITE_URL);
       socket.on('hand_shake', function (data) {
         if(!check_chat_olny)
         {
