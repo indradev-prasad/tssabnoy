@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="../lib/css/emoji.css" rel="stylesheet">
 </head>
 <body>
   
@@ -38,7 +37,7 @@
    <footer class="panel-footer list-group-item" id="conversation_footer">
          <div class="input-group">
                   <p class="lead emoji-picker-container">
-              <input type="email" class="form-control emoji_picker" id="chatMessage" placeholder="Say something" data-emojiable="true">
+              <input type="email" class="form-control" id="chatMessage" placeholder="Say something">
             </p>
                    <span class="input-group-btn"><button id="send_button" class="btn btn-default" type="submit">SEND</button> </span> 
          </div>
@@ -64,7 +63,7 @@
          <div class="input-group">
            <span class="input-group-btn"><button id="send_button_next" class="btn btn-default" type="button">NEXT</button> </span> 
                   <p class="lead emoji-picker-container">
-              <input type="email" class="form-control emoji_picker" id="chatMessage_only" placeholder="Say something" data-emojiable="true">
+              <input type="email" class="form-control" id="chatMessage_only" placeholder="Say something">
             </p>
                    <span class="input-group-btn"><button id="send_button_only" class="btn btn-default" type="submit" disabled="disabled">SEND</button> </span> 
          </div>
@@ -76,54 +75,5 @@
 <!--end here-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script src="bundle.js"></script>
-      <script src="../assets/js/jquery.min.js"></script>
-          <!-- Begin emoji-picker JavaScript -->
-    <script src="../lib/js/config.js"></script>
-    <script src="../lib/js/util.js"></script>
-    <script src="../lib/js/jquery.emojiarea.js"></script>
-    <script src="../lib/js/emoji-picker.js"></script>
-    <!-- End emoji-picker JavaScript -->
-    <script type="text/javascript">
-      $(function(){
-              var emoji = new EmojiPicker({
-          emojiable_selector: $(".emoji_picker"),
-          assetsPath: '../lib/img/',
-          popupButtonClasses: 'fa fa-smile-o'
-        });
-        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-        // It can be called as many times as necessary; previously converted input fields will not be converted again
-        emoji.discover();
-        document.querySelector('.emoji-wysiwyg-editor').focus();
-                    document.querySelector('.emoji-wysiwyg-editor').addEventListener('keypress', function(e) {
-                     if ((e.keyCode || e.which) == 13) {
-                      e.preventDefault();
-                      var check_chat_mode= $(".video-plus-chat-section").html();
-                      if(check_chat_mode==undefined)
-                      {
-                             $("#send_button_only").trigger('click');
-                      }
-                      else{
-                     $("#send_button").trigger('click');
-                      }
-                           }
-    });
-                    // $("#send_button").on('click',function(){
-                    //   //alert("trigger");
-                    // })
-      });
-              $(document).ready(function(){
-              resizeDiv();
-              });
-
-              window.onresize = function(event) {
-              resizeDiv();
-              }
-
-              function resizeDiv() {
-              vph = $(window).height();
-              $("#conversation_section").attr('data-css',vph);
-              }
-    </script>
 </body>
 </html>
