@@ -2,7 +2,7 @@
     var SITE_URL=document.location.origin
 //check webrct support or not
 var check_chat_olny=false;
-if (Peer.WEBRTC_SUPPORT) {
+if (!Peer.WEBRTC_SUPPORT) {
       //lets go video chat
       //make html clean for video chat
         var elem = document.querySelector('.only-chat-section');
