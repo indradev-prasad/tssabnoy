@@ -48,6 +48,10 @@ var p;//global variable
 var check=true;
 var video;
 var connected=false;
+var local_stream='';
+var remote_stream='';
+var stop_multiple_event=true;
+
 function gotMedia (stream) {
 //my local video
       // got my or local video stream, now let's show it in a video tag
@@ -55,6 +59,7 @@ function gotMedia (stream) {
     local_video.src = window.URL.createObjectURL(stream)
     local_video.play()
     local_video.muted = true;
+    local_stream=stream;
 
 p=new Peer({ initiator: check, stream: stream,
       reconnectTimer: 100,
@@ -85,8 +90,9 @@ p.on('signal', function (data) {
       socket.emit('broadcast_answer',{"node_id":node_id,"node_data":JSON.stringify(data)}); 
   }
 })
-       if(check_chat_olny==false)
+       if((check_chat_olny==false)&&(stop_multiple_event==true))
          {
+          stop_multiple_event=false;
 document.querySelector('#send_button').addEventListener('click', function (ev) {
   message_handle();
 })
@@ -102,6 +108,27 @@ document.querySelector('#chatMessage').addEventListener('keypress', function (e)
   document.querySelector('.leave_room').addEventListener('click', function (ev) {
       window.parent.document.getElementById('leave_room').click(); 
 })
+  //handle media track event
+  document.querySelector('.video_play_track').addEventListener('click',function(ev){
+    var check_video_track=parent.check_video_track;
+           if(check_video_track==true){
+              parent.check_video_track=false;
+           } else{
+           parent.check_video_track=true;
+           }
+           hand_media_tracks();
+  })
+    document.querySelector('.audio_play_track').addEventListener('click',function(ev){
+       var check_audio_track=parent.check_audio_track;
+                 if(check_audio_track==true){
+              parent.check_audio_track=false;
+           } else{
+           parent.check_audio_track=true;
+           }
+          hand_media_tracks();
+  })
+    hand_media_tracks();//initialise
+  ///end here handle media tracks event
     }
 p.on('connect', function () {
   // console.log('CONNECT')
@@ -121,6 +148,7 @@ p.on('data', function (data) {
     video = document.querySelector('#remote_video')
     video.src = window.URL.createObjectURL(stream)
     video.play()
+    remote_stream=stream;
   })
 
   p.on('close', function () {
@@ -130,6 +158,46 @@ p.on('data', function (data) {
            document.querySelector('#next_connect').click();//connected but they leave me then I will find next one 
       }
   })
+  function hand_media_tracks(){
+    images={};
+    images.video_play="../assets/images/video-play.png";
+    images.sound_play="../assets/images/sound-play.png";
+    images.video_off="../assets/images/video-off.png";
+    images.sound_off="../assets/images/sound-off.png";
+    var check_video_track=parent.check_video_track;
+    var check_audio_track=parent.check_audio_track;
+       if(check_video_track==true){
+            document.querySelector(".video_play_track_img").setAttribute('src',images.video_play)
+            if(local_stream!=''){
+               local_stream.getVideoTracks()[0].enabled=true;
+            }
+                  if(remote_stream!=''){
+              remote_stream.getVideoTracks()[0].enabled=true;
+                  }
+                 
+       } else{
+           document.querySelector(".video_play_track_img").setAttribute('src',images.video_off) 
+                    if(local_stream!=''){
+               local_stream.getVideoTracks()[0].enabled=false;
+            }
+                  if(remote_stream!=''){
+              remote_stream.getVideoTracks()[0].enabled=false;
+                  }
+           
+       }
+       if(check_audio_track==true){
+           document.querySelector(".audio_play_track_img").setAttribute('src',images.sound_play)
+           if(remote_stream!=''){
+              remote_stream.getAudioTracks()[0].enabled=true;
+                  }
+       } else{
+          document.querySelector(".audio_play_track_img").setAttribute('src',images.sound_off)
+          if(remote_stream!=''){
+              remote_stream.getAudioTracks()[0].enabled=false;
+                  }
+       }
+  }
+
 
   //socket io code
             socket.on('broadcast_offer', function (data) { 

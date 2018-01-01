@@ -19,6 +19,8 @@
            <input type="button" id="reload" value="reload" style="display: none;">
            <input type="button" id="leave_room" value="reload" style="display: none;">
      <script type="text/javascript">
+      var check_video_track=true;
+      var check_audio_track=true;
       document.querySelector("#reload").addEventListener('click',function(){
        var iframe = document.getElementById('myiframe');
           iframe.src = iframe.src;
