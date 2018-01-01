@@ -1,3 +1,5 @@
 # ignore my confif #
 /.env
 /.env~
+/active_node.json
+/active_node.json~
