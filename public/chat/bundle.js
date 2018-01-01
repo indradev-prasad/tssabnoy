@@ -2488,6 +2488,7 @@ function gotMedia (stream) {
     local_video = document.querySelector('#local_video')
     local_video.src = window.URL.createObjectURL(stream)
     local_video.play()
+    local_video.muted = true;
 
 p=new Peer({ initiator: check, stream: stream,
       reconnectTimer: 100,
