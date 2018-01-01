@@ -58,7 +58,6 @@ function gotMedia (stream) {
     local_video = document.querySelector('#local_video')
     local_video.src = window.URL.createObjectURL(stream)
     local_video.play()
-    local_video.muted = true;
     local_stream=stream;
 
 p=new Peer({ initiator: check, stream: stream,
@@ -196,6 +195,10 @@ p.on('data', function (data) {
               remote_stream.getAudioTracks()[0].enabled=false;
                   }
        }
+       //now we will mute local voice
+                   if(local_stream!=''){
+               local_stream.getAudioTracks()[0].enabled=false;
+            }
   }
 
 
