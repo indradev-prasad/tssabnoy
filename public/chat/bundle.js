@@ -2553,6 +2553,11 @@ p.on('data', function (data) {
     video = document.querySelector('#local_video')
     video.src = window.URL.createObjectURL(stream)
     //video.play()
+            video.onloadedmetadata = function(e) {
+            video.play();
+            video.muted = true;
+        };
+
 
   p.on('close', function () {
   	//video.destroy();
