@@ -2483,7 +2483,25 @@ var check=true;
 var video;
 var connected=false;
 function gotMedia (stream) {
-p=new Peer({ initiator: check, stream: stream })
+p=new Peer({ initiator: check, stream: stream,
+      reconnectTimer: 100,
+      iceTransportPolicy: 'relay',
+      trickle: false,
+      config: {
+        iceServers: [
+          {
+            "urls": "stun:numb.viagenie.ca",
+            "username": 'kumarindradevd9211@gmail.com',
+            "credential": 'test@123'
+          },
+          {
+            "urls": "turn:numb.viagenie.ca",
+            "username": "kumarindradevd9211@gmail.com",
+            "credential": "test@123"
+          }
+        ]
+      }
+ })
 p.on('error', function (err) { console.log('error', err) })
 
 p.on('signal', function (data) {
