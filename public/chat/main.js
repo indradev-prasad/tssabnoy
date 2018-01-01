@@ -144,11 +144,11 @@ p.on('data', function (data) {
 })
   p.on('stream', function (stream) {
     // got remote video stream, now let's show it in a video tag
+     document.querySelector('#remote_video').setAttribute('style','height:auto;');
     video = document.querySelector('#remote_video')
     video.src = window.URL.createObjectURL(stream)
     video.play()
     remote_stream=stream;
-    document.querySelector('#remote_video').setAttribute('style','height:auto;');
   })
 
   p.on('close', function () {
