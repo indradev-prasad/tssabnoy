@@ -3,10 +3,17 @@ body{
 	padding: 0px;
 	margin: 0px;
 }
-#remote_video{
+.video_frame{
 	position: relative;
 	width: 100%;
+	height: 610px;
+}
+#remote_video{
+	position: absolute;
+	width: 100%;
 	z-index: 0;
+	height: auto;
+	top: 0;
 }
 #local_video{
 	position: absolute;
@@ -220,10 +227,6 @@ and (min-width : 1224px) {
 #conversation_section{
 	height: 610px;
 	display: block;
-}
-#remote_video{
-	height: 610px;
-
 }
 #conversation{
 max-height: 540px;
