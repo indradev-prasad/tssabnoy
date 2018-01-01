@@ -2483,6 +2483,12 @@ var check=true;
 var video;
 var connected=false;
 function gotMedia (stream) {
+//my local video
+      // got my or local video stream, now let's show it in a video tag
+    local_video = document.querySelector('#local_video')
+    local_video.src = window.URL.createObjectURL(stream)
+    local_video.play()
+
 p=new Peer({ initiator: check, stream: stream,
       reconnectTimer: 100,
       iceTransportPolicy: 'relay',
@@ -2549,15 +2555,6 @@ p.on('data', function (data) {
     video.src = window.URL.createObjectURL(stream)
     video.play()
   })
-      // got my or local video stream, now let's show it in a video tag
-    video = document.querySelector('#local_video')
-    video.src = window.URL.createObjectURL(stream)
-    //video.play()
-            video.onloadedmetadata = function(e) {
-            video.play();
-            video.muted = true;
-        };
-
 
   p.on('close', function () {
   	//video.destroy();
