@@ -5,10 +5,12 @@ body{
 }
 #remote_video{
 	position: relative;
+	width: 100%;
+	z-index: 0;
 }
 #local_video{
 	position: absolute;
-	top: 73%;
+	top: 70%;
 	right: 75%;
 	border-radius: 50%;
 }
@@ -28,6 +30,7 @@ body{
 	position: absolute;
 	top: 50%;
     left: 90%;
+    z-index: 2;
 }
 .me-message{
     font-size: 14px;
@@ -123,6 +126,8 @@ body{
 	bottom: 0;
 	width: 100%;
 	text-align: center;
+	height: 100px;
+	z-index: 2;
 }
 .video-button-inner{
 	background: rgba(255,255,255,.5); 
@@ -147,6 +152,20 @@ body{
 .video-imgs img{
 	margin-bottom: 13px;
 }
+.mute_video_case{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #CECECE;
+	top:0;
+	z-index: 1;
+}
+.mute_video_case p{
+	    text-align: center;
+    margin-top: 30%;
+    font-size: 30px;
+}
 
 
 
@@ -156,52 +175,20 @@ body{
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
-#conversation_section{
-	height: 300px;
-}
-#remote_video{
-	height: 300px;
 
-}
 }
  
 /* Smartphones (landscape) ----------- */
 @media only screen
 and (min-width : 321px) {
-#conversation_section{
-	height: 250px;
-}
-#remote_video{
-	height: 250px;
 
-}
 
 }
  
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
-#conversation_section{
-	height: 360px;
-	display: none;
-}
-#remote_video{
-	height: 360px;
-	width: 100%;
 
-}
-.video-section{
-	width: 100%;
-}
-#local_video{
-  height: 100px;
-  	top: 60%;
-	right: 55%;
-}
-#next_connect{
-	top: 40%;
-    left: 80%;
-}
 }
  
 /* iPads (portrait and landscape) ----------- */
@@ -243,7 +230,7 @@ max-height: 540px;
 }
 #local_video{
 height: 150px;
-top: 73%;
+top: 70%;
 right: 75%;
 }
 #conversation_section_only{

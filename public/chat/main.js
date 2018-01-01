@@ -148,6 +148,7 @@ p.on('data', function (data) {
     video.src = window.URL.createObjectURL(stream)
     video.play()
     remote_stream=stream;
+    document.querySelector('#remote_video').setAttribute('style','height:auto;');
   })
 
   p.on('close', function () {
@@ -173,6 +174,7 @@ p.on('data', function (data) {
                   if(remote_stream!=''){
               remote_stream.getVideoTracks()[0].enabled=true;
                   }
+                   document.querySelector(".mute_video_case").setAttribute('style','display:none;');
                  
        } else{
            document.querySelector(".video_play_track_img").setAttribute('src',images.video_off) 
@@ -182,6 +184,7 @@ p.on('data', function (data) {
                   if(remote_stream!=''){
               remote_stream.getVideoTracks()[0].enabled=false;
                   }
+         document.querySelector(".mute_video_case").setAttribute('style','display:block;');
            
        }
        if(check_audio_track==true){
