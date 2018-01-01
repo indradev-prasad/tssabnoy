@@ -2633,9 +2633,6 @@ p.on('data', function (data) {
                   }
        }
        //now we will mute local voice
-                   if(local_stream!=''){
-               local_stream.getAudioTracks()[0].enabled=false;
-            }
   }
 
 
