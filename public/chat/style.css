@@ -3,6 +3,9 @@ body{
 	padding: 0px;
 	margin: 0px;
 }
+.video-plus-chat-section{
+	border-top: 2px solid #AECEEE;
+}
 .video_frame{
 	position: relative;
 	width: 100%;
@@ -17,9 +20,10 @@ body{
 }
 #local_video{
 	position: absolute;
-	top: 70%;
+	top: 75%;
 	right: 75%;
-	border-radius: 50%;
+	height: 150px;
+	/*border-radius: 50%;*/
 }
 .video-section{
 	padding-left: 0px;
@@ -130,7 +134,7 @@ body{
 }
 .video-button-section{
 	position: absolute;
-	bottom: 0;
+	top: 90%;
 	width: 100%;
 	text-align: center;
 	height: 100px;
@@ -172,6 +176,12 @@ body{
 	    text-align: center;
     margin-top: 30%;
     font-size: 30px;
+}
+.logo-of-video{
+	top:90%;
+	left: 90%;
+	position: absolute;
+	display: none;
 }
 
 
@@ -230,11 +240,6 @@ and (min-width : 1224px) {
 }
 #conversation{
 max-height: 540px;
-}
-#local_video{
-height: 150px;
-top: 70%;
-right: 75%;
 }
 #conversation_section_only{
 	height: 610px;

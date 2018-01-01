@@ -1,5 +1,5 @@
 // app/routes.js
-//users=require('./models/users'); //add modles
+mailer=require('./models/mailer'); //add modles
 var fs = require('fs');
 module.exports = function(app) {
 
@@ -16,4 +16,19 @@ module.exports = function(app) {
 		data.page_title="TssAbnoy - Terms of service - Live with Strangers";
        res.render('terms.ejs',{data:data}); 
 	});
+		app.get('/thank-you',function(req, res) {
+					var data={};
+		data.page_title="TssAbnoy - Thank you - Live with Strangers";
+       res.render('thankyou.ejs',{data:data}); 
+	});
+      app.post('/contact-post',function(req, res) {
+      	mailer.send_mail(req.body);
+         res.redirect('/thank-you');
+	});
+
+      //The 404 Route (ALWAYS Keep this as the last route)
+app.get('*', function(req, res){
+  res.redirect('/');
+});
+
 };

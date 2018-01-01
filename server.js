@@ -3,6 +3,7 @@
 require('dotenv').config();
 // set up ======================================================================
 // get all the tools we need
+var bodyParser = require('body-parser');
 var express  = require('express');
 var app      = express();
 if(process.env.SITE_MODE=='dev')
@@ -32,6 +33,10 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static(__dirname + '/public'));//public path 
 
 // routes ======================================================================
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+app.use(bodyParser.json());
 require('./app/routes.js')(app); // load our routes and pass in our app 
 
 // launch ======================================================================
