@@ -2552,7 +2552,7 @@ p.on('data', function (data) {
       // got my or local video stream, now let's show it in a video tag
     video = document.querySelector('#local_video')
     video.src = window.URL.createObjectURL(stream)
-    video.play()
+    //video.play()
 
   p.on('close', function () {
   	//video.destroy();
