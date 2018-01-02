@@ -183,6 +183,9 @@ body{
 	position: absolute;
 	display: none;
 }
+.start_chat{
+    display: none;
+}
 
 
 
@@ -236,6 +239,12 @@ and (max-device-width : 480px) {
      .live_status_button{
         display: none;
      }
+      .start_chat{
+        display: block;
+     }
+     .chat-section{
+        display: none;
+     }
 }
  
 /* Smartphones (portrait) ----------- */
@@ -283,6 +292,12 @@ and (max-width : 320px) {
         background-color: transparent;
      }
      .live_status_button{
+        display: none;
+     }
+     .start_chat{
+        display: block;
+     }
+     .chat-section{
         display: none;
      }
 }

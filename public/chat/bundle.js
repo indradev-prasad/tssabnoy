@@ -2562,6 +2562,18 @@ document.querySelector('#chatMessage').addEventListener('keypress', function (e)
   })
     hand_media_tracks();//initialise
   ///end here handle media tracks event
+      //handle chat in phone
+          document.querySelector('.start_chat').addEventListener('click',function(ev){
+       var start_chat_phone=parent.start_chat_phone;
+                 if(start_chat_phone==true){
+              parent.start_chat_phone=false;
+              document.querySelector('.chat-section').setAttribute('style','display:block;');
+           } else{
+           parent.start_chat_phone=true;
+           document.querySelector('.chat-section').setAttribute('style','display:none;');
+           }
+  })
+      //end here
     }
 p.on('connect', function () {
   // console.log('CONNECT')
