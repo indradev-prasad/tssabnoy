@@ -185,6 +185,7 @@ body{
 }
 .start_chat{
     display: none;
+    display: inherit;
 }
 
 
