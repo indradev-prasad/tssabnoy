@@ -215,6 +215,10 @@ and (max-device-width : 480px) {
      	top:3%;
      	left: 82%;
      }
+     #remote_video{
+        object-fit: initial;
+        height: 400px;
+     }
 }
  
 /* Smartphones (portrait) ----------- */
@@ -242,6 +246,10 @@ and (max-width : 320px) {
      .logo-of-video{
      	top:3%;
      	left: 82%;
+     }
+          #remote_video{
+            object-fit: initial;
+        height: 400px;
      }
 }
  
