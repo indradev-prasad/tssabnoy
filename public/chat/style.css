@@ -192,36 +192,7 @@ body{
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
-     .video-section{
-     	width: 100%;
-
-     }
-     .video_frame{
-     	height: 400px;
-     }
-     #local_video{
-     	height: 110px;
-     	top:65%;
-     	right: 52%;
-     }
-     #next_connect{
-     	top: 40%;
-     	left: 80%;
-     }
-     .video-button-section{
-     	text-align: right;
-     }
-     .logo-of-video{
-     	top:3%;
-     	left: 82%;
-     }
-}
- 
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-
-     .video-section{
+   .video-section{
      	width: 100%;
 
      }

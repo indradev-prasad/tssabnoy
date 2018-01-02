@@ -178,7 +178,7 @@ footer ul li {
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
-    #myiframe{
+       #myiframe{
     min-height: 600px;
     }
     .welcomescreen-inner{
@@ -195,27 +195,7 @@ and (max-device-width : 480px) {
         margin-top: 0;
     }
 }
- 
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-    #myiframe{
-    min-height: 600px;
-    }
-    .welcomescreen-inner{
-        padding-top:10px;
-        height: 500px;
-    }
-    .form-top h1{
-        margin: 0 0 0;
-    }
-    #livenode{
-         margin: 0 0 0;
-    }
-    .form_footer{
-        margin-top: 0;
-    }
-}
+
  
 /* Smartphones (portrait) ----------- */
 @media only screen
