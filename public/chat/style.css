@@ -205,7 +205,25 @@ and (min-width : 321px) {
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
+     .video-section{
+     	width: 100%;
 
+     }
+     .video_frame{
+     	height: 400px;
+     }
+     #local_video{
+     	height: 110px;
+     	top:65%;
+     	right: 52%;
+     }
+     #next_connect{
+     	top: 40%;
+     	left: 80%;
+     }
+     .video-button-section{
+     	top:85%;
+     }
 }
  
 /* iPads (portrait and landscape) ----------- */
