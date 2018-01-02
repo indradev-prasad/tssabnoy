@@ -23,7 +23,7 @@ body{
 	top: 75%;
 	right: 75%;
 	height: 150px;
-	/*border-radius: 50%;*/
+	border-radius: 50%;
 }
 .video-section{
 	padding-left: 0px;
@@ -200,7 +200,7 @@ and (max-device-width : 480px) {
      	height: 450px;
      }
      #local_video{
-     	height: 150px;
+     	height: 110px;
      	top:60%;
      	left: 1%;
      }
@@ -232,7 +232,7 @@ and (max-width : 320px) {
      	height: 450px;
      }
      #local_video{
-     	height: 150px;
+     	height: 110px;
      	top:60%;
      	left: 1%;
      }
