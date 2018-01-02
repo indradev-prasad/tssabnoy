@@ -211,6 +211,9 @@ and (max-device-width : 480px) {
      .video-button-section{
        background: rgba(255,255,255,.5);
      }
+     .video-button-inner{
+        background: none;
+     }
      .logo-of-video{
      	top:3%;
      	left: 82%;
@@ -218,6 +221,20 @@ and (max-device-width : 480px) {
      #remote_video{
         object-fit: initial;
         height: 450px;
+     }
+    .chat-section{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+       background-color: transparent;
+     }
+     #conversation_section{
+        position: relative;
+        height: 350px;
+        background-color: transparent;
+     }
+     .live_status_button{
+        display: none;
      }
 }
  
@@ -243,6 +260,9 @@ and (max-width : 320px) {
      .video-button-section{
      	 background: rgba(255,255,255,.5);
      }
+    .video-button-inner{
+        background: none;
+     }
      .logo-of-video{
      	top:3%;
      	left: 82%;
@@ -250,6 +270,20 @@ and (max-width : 320px) {
           #remote_video{
             object-fit: initial;
         height: 450px;
+     }
+     .chat-section{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+       background-color: transparent;
+     }
+     #conversation_section{
+        position: relative;
+        height: 350px;
+        background-color: transparent;
+     }
+     .live_status_button{
+        display: none;
      }
 }
  
