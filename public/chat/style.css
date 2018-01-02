@@ -185,7 +185,6 @@ body{
 }
 .start_chat{
     display: none;
-    display: inherit;
 }
 
 
@@ -241,7 +240,7 @@ and (max-device-width : 480px) {
         display: none;
      }
       .start_chat{
-        display: block;
+        display: inherit;
      }
      .chat-section{
         display: none;
@@ -296,7 +295,7 @@ and (max-width : 320px) {
         display: none;
      }
      .start_chat{
-        display: block;
+        display: inherit;
      }
      .chat-section{
         display: none;
