@@ -197,19 +197,19 @@ and (max-device-width : 480px) {
 
      }
      .video_frame{
-     	height: 400px;
+     	height: 450px;
      }
      #local_video{
-     	height: 110px;
+     	height: 150px;
      	top:65%;
-     	right: 52%;
+     	left: 1%;
      }
      #next_connect{
      	top: 40%;
      	left: 80%;
      }
      .video-button-section{
-     	text-align: right;
+       background: rgba(255,255,255,.5);
      }
      .logo-of-video{
      	top:3%;
@@ -217,7 +217,7 @@ and (max-device-width : 480px) {
      }
      #remote_video{
         object-fit: initial;
-        height: 400px;
+        height: 450px;
      }
 }
  
@@ -229,12 +229,12 @@ and (max-width : 320px) {
 
      }
      .video_frame{
-     	height: 400px;
+     	height: 450px;
      }
      #local_video{
-     	height: 110px;
+     	height: 150px;
      	top:65%;
-     	right: 52%;
+     	left: 1%;
      }
      #next_connect{
      	top: 40%;
@@ -249,7 +249,7 @@ and (max-width : 320px) {
      }
           #remote_video{
             object-fit: initial;
-        height: 400px;
+        height: 450px;
      }
 }
  
