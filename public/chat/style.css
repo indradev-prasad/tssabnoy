@@ -201,7 +201,7 @@ and (max-device-width : 480px) {
      }
      #local_video{
      	height: 150px;
-     	top:65%;
+     	top:60%;
      	left: 1%;
      }
      #next_connect{
@@ -233,7 +233,7 @@ and (max-width : 320px) {
      }
      #local_video{
      	height: 150px;
-     	top:65%;
+     	top:60%;
      	left: 1%;
      }
      #next_connect{
@@ -241,7 +241,7 @@ and (max-width : 320px) {
      	left: 80%;
      }
      .video-button-section{
-     	text-align: right;
+     	 background: rgba(255,255,255,.5);
      }
      .logo-of-video{
      	top:3%;
