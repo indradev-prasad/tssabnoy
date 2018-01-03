@@ -2,6 +2,7 @@ body{
 	overflow: hidden;
 	padding: 0px;
 	margin: 0px;
+    background: #5F9EA0;
 }
 .video-plus-chat-section{
 	border-top: 2px solid #AECEEE;
@@ -28,8 +29,8 @@ body{
 .video-section{
 	padding-left: 0px;
 	padding-right: 0px;
-	background-color: #CECECE;
-	width: 64%;
+	/*background-color: #CECECE;*/
+	width: 66%;
 }
 .chat-section{
 	padding-left: 0px;
@@ -71,7 +72,7 @@ body{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 .spin_loader{
     position: absolute;
@@ -111,10 +112,7 @@ body{
 .chat-section-only{
 	padding-left: 0px;
 	padding-right: 0px;
-	background-color: #FFFFFF;
-	    border-style: solid;
-    border-color: #000;
-    border-width:1px;
+	background-color: #CECECE;
 }
 #conversation_section_only{
 	position: relative;;
@@ -131,7 +129,7 @@ body{
 .live_status_button{
 	width: 100%;
 	border-radius: 10px;
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 .video-button-section{
 	position: absolute;
@@ -186,6 +184,15 @@ body{
 }
 .start_chat{
     display: none;
+}
+#conversation_section_only .live_status_button{
+    margin-left: 0px;
+}
+#conversation_section_only{
+    height: 610px;
+}
+#conversation_only{
+    max-height: 540px;
 }
 
 
@@ -249,6 +256,9 @@ and (max-device-width : 480px) {
      #conversation{
         max-height: 300px;
      }
+    #conversation_section_only .live_status_button{
+    display: block;
+      }
 }
 /*pure landscape*/
 @media only screen
@@ -309,6 +319,9 @@ and (max-device-width : 700px)
           #conversation{
         max-height: 210px;
      }
+       #conversation_section_only .live_status_button{
+    display: block;
+      }
 }
  
 /* Smartphones (portrait) ----------- */
@@ -367,6 +380,9 @@ and (max-width : 320px) {
           #conversation{
         max-height: 300px;
      }
+       #conversation_section_only .live_status_button{
+    display: block;
+      }
 }
  
 /* iPads (landscape) ----------- */
@@ -394,12 +410,6 @@ and (min-width : 1224px) {
 }
 #conversation{
 max-height: 540px;
-}
-#conversation_section_only{
-	height: 610px;
-}
-#conversation_only{
-	max-height: 540px;
 }
 
 }

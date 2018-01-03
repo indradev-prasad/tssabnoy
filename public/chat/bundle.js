@@ -2436,7 +2436,8 @@ process.umask = function() { return 0; };
     var SITE_URL=document.location.origin
 //check webrct support or not
 var check_chat_olny=false;
-if (Peer.WEBRTC_SUPPORT) {
+var chat_only_selected=parent.chat_only_selected;//want only chat
+if (Peer.WEBRTC_SUPPORT && chat_only_selected==true) {
       //lets go video chat
       //make html clean for video chat
         var elem = document.querySelector('.only-chat-section');
@@ -2524,7 +2525,7 @@ p.on('signal', function (data) {
              if(my_node_id!='')
              {
                socket.emit('hand_shake',{'node_id':my_node_id,'node_data':node_data}); 
-               alert("token sent");
+               //alert("token sent");
              } else{//not ready till
                   setTimeout(function(){ 
                      socket.emit('hand_shake',{'node_id':my_node_id,'node_data':node_data}); 
@@ -2690,8 +2691,9 @@ function message_handle(){
 }
 
 function gotMediaError(error) {
-  alert("hiiii");
   console.log('navigator.getUserMedia error: ', error);
+   parent.chat_only_selected=false;//they will access only chat
+  document.querySelector('#next_connect').click();
 }
 
 //code of socket for chat only
@@ -2756,6 +2758,20 @@ function gotMediaError(error) {
 js for iframe below
 */
 window.addEventListener('load', function() {
+  setdivheight();
+  window.onresize = function(event) {
+      setdivheight();
+};
+  function setdivheight(){
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    document.getElementById('conversation_section_only').setAttribute('style','height:'+y+'px;');
+    var iner=y-50;
+     document.getElementById('conversation_only').setAttribute('style','height:'+iner+'px;');
+  }
 });
 
 

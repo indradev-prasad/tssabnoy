@@ -8,6 +8,11 @@ $(document).ready(function(){
 		$(".welcomescreen").hide();
          $("#myiframe").attr('src','chat/iframe.html');
 	});
+	$(document).on('click','.select_chat_only',function(){
+		chat_only_selected=false;
+		$(".welcomescreen").hide();
+         $("#myiframe").attr('src','chat/iframe.html');
+	});
 	$(document).on('click','.logo',function(){
           window.location.href="/";
 	});
