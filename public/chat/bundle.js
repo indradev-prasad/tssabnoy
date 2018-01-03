@@ -2763,11 +2763,15 @@ window.addEventListener('load', function() {
       setdivheight();
 };
   function setdivheight(){
-    var w = window,
+ var w = window,
     d = document,
     e = d.documentElement,
     g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    if(x<1024){
+         y=y-100;//for phone
+    }
     var checkischat=document.getElementById('conversation_section_only');
     if(checkischat!=null){
     document.getElementById('conversation_section_only').setAttribute('style','height:'+y+'px;');
