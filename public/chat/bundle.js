@@ -2462,6 +2462,7 @@ navigator.getUserMedia({ video: true, audio: true }, gotMedia, gotMediaError)
     var check_chat_connected=false;
     var socket = io.connect(SITE_URL);
       socket.on('hand_shake', function (data) {
+        alert("jiii");
         if(!check_chat_olny)
         {
           //handshake for video and chat  webrtc
