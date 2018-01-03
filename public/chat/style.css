@@ -139,7 +139,7 @@ body{
 	width: 100%;
 	text-align: center;
 	height: 100px;
-	z-index: 2;
+	z-index: 3;
 }
 .video-button-inner{
 	background: rgba(255,255,255,.5); 
@@ -273,6 +273,7 @@ and (max-device-width : 700px)
      }
      .video-button-section{
        background: rgba(255,255,255,.5);
+       top:85%;
      }
      .video-button-inner{
         background: none;
@@ -287,13 +288,13 @@ and (max-device-width : 700px)
      }
     .chat-section{
         position: absolute;
-        top: 10%;
+        top: 1%;
         width: 100%;
        background-color: transparent;
      }
      #conversation_section{
         position: relative;
-        height: 250px;
+        height: 220px;
         background-color: transparent;
      }
      .live_status_button{
@@ -306,7 +307,7 @@ and (max-device-width : 700px)
         display: none;
      }
           #conversation{
-        max-height: 200px;
+        max-height: 190px;
      }
 }
  
