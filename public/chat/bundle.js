@@ -2462,14 +2462,14 @@ navigator.getUserMedia({ video: true, audio: true }, gotMedia, gotMediaError)
     var check_chat_connected=false;
     var socket = io.connect(SITE_URL);
       socket.on('hand_shake', function (data) {
-        alert("jiii");
         if(!check_chat_olny)
         {
+            my_node_id=data.socket_id;
           //handshake for video and chat  webrtc
             if(node_data==''){
-                socket.emit('not_ready_to_hand_shake',{'socket_id':data.socket_id,'node_data':""}); 
+                //socket.emit('not_ready_to_hand_shake',{'socket_id':data.socket_id,'node_data':""}); 
           } else{
-              socket.emit('hand_shake',{'node_id':data.socket_id,'node_data':node_data}); 
+              //socket.emit('hand_shake',{'node_id':data.socket_id,'node_data':node_data}); 
           }  
         }
         else{
@@ -2518,7 +2518,20 @@ p.on('error', function (err) { console.log('error', err) })
 
 p.on('signal', function (data) {
   if(data.type=="offer"){
-  node_data=JSON.stringify(data);
+     //send my offer
+     if(node_data==''){//first time only
+             node_data=JSON.stringify(data);
+             if(my_node_id!='')
+             {
+               socket.emit('hand_shake',{'node_id':my_node_id,'node_data':node_data}); 
+               alert("token sent");
+             } else{//not ready till
+                  setTimeout(function(){ 
+                     socket.emit('hand_shake',{'node_id':my_node_id,'node_data':node_data}); 
+                   }, 1000);
+             }
+     }
+  //end here
   }
     if(data.type=="answer"){
       socket.emit('broadcast_answer',{"node_id":node_id,"node_data":JSON.stringify(data)}); 
