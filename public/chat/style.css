@@ -303,13 +303,6 @@ and (max-width : 320px) {
      }
 }
  
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-/* STYLES GO HERE */
-}
- 
 /* iPads (landscape) ----------- */
 @media only screen
 and (min-device-width : 768px)
@@ -351,19 +344,61 @@ and (min-width : 1824px) {
 /* STYLES GO HERE */
 }
  
-/* iPhone 5 (portrait &amp; landscape)----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px) {
-/* STYLES GO HERE */
-}
- 
 /* iPhone 5 (landscape)----------- */
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : landscape) {
-/* STYLES GO HERE */
+       .video-section{
+        width: 100%;
+
+     }
+     .video_frame{
+        height: 450px;
+     }
+     #local_video{
+        height: 110px;
+        top:60%;
+        left: 1%;
+     }
+     #next_connect{
+        top: 40%;
+        left: 80%;
+     }
+     .video-button-section{
+         background: rgba(255,255,255,.5);
+     }
+    .video-button-inner{
+        background: none;
+     }
+     .logo-of-video{
+        top:3%;
+        left: 82%;
+     }
+          #remote_video{
+            object-fit: initial;
+        height: 450px;
+     }
+     .chat-section{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+       background-color: transparent;
+     }
+     #conversation_section{
+        position: relative;
+        height: 350px;
+        background-color: transparent;
+     }
+     .live_status_button{
+        display: none;
+     }
+     .start_chat{
+        display: inherit;
+     }
+     .chat-section{
+        display: none;
+     }
 }
  
 /* iPhone 5 (portrait)----------- */
@@ -371,5 +406,54 @@ and (orientation : landscape) {
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
-/* STYLES GO HERE */
+     .video-section{
+        width: 100%;
+
+     }
+     .video_frame{
+        height: 450px;
+     }
+     #local_video{
+        height: 110px;
+        top:60%;
+        left: 1%;
+     }
+     #next_connect{
+        top: 40%;
+        left: 80%;
+     }
+     .video-button-section{
+         background: rgba(255,255,255,.5);
+     }
+    .video-button-inner{
+        background: none;
+     }
+     .logo-of-video{
+        top:3%;
+        left: 82%;
+     }
+          #remote_video{
+            object-fit: initial;
+        height: 450px;
+     }
+     .chat-section{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+       background-color: transparent;
+     }
+     #conversation_section{
+        position: relative;
+        height: 350px;
+        background-color: transparent;
+     }
+     .live_status_button{
+        display: none;
+     }
+     .start_chat{
+        display: inherit;
+     }
+     .chat-section{
+        display: none;
+     }
 }

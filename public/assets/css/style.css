@@ -10,6 +10,7 @@ body{
 	width: 100%;
     background-color: #0093FF;
     position: relative;
+    min-height: 610px;
 }
 .welcomescreen{
     position: absolute;
@@ -194,6 +195,9 @@ and (max-device-width : 480px) {
     .form_footer{
         margin-top: 0;
     }
+    .form-top h3::after{
+        width: 200px;
+    }
 }
 
  
@@ -216,23 +220,33 @@ and (max-width : 320px) {
     .form_footer{
         margin-top: 0;
     }
+      .form-top h3::after{
+        width: 200px;
+    }
 }
  
 /* iPads (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
-    #myiframe{
-	min-height: 350px;
+  #myiframe{
+    min-height: 600px;
     }
-}
- 
-/* iPads (landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-/* STYLES GO HERE */
+    .welcomescreen-inner{
+        padding-top:10px;
+    }
+    .form-top h1{
+        margin: 0 0 0;
+    }
+    #livenode{
+         margin: 0 0 0;
+    }
+    .form_footer{
+        margin-top: 0;
+    }
+      .form-top h3::after{
+        width: 200px;
+    }
 }
  
 /* iPads (portrait) ----------- */
@@ -240,7 +254,24 @@ and (orientation : landscape) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
-/* STYLES GO HERE */
+  #myiframe{
+    min-height: 600px;
+    }
+    .welcomescreen-inner{
+        padding-top:10px;
+    }
+    .form-top h1{
+        margin: 0 0 0;
+    }
+    #livenode{
+         margin: 0 0 0;
+    }
+    .form_footer{
+        margin-top: 0;
+    }
+      .form-top h3::after{
+        width: 200px;
+    }
 }
  
 /* Desktops and laptops ----------- */
@@ -259,19 +290,30 @@ and (min-width : 1824px) {
 /* STYLES GO HERE */
 }
  
-/* iPhone 5 (portrait &amp; landscape)----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px) {
-/* STYLES GO HERE */
-}
- 
 /* iPhone 5 (landscape)----------- */
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : landscape) {
-/* STYLES GO HERE */
+  #myiframe{
+    min-height: 600px;
+    }
+    .welcomescreen-inner{
+        padding-top:10px;
+        height: 500px;
+    }
+    .form-top h1{
+        margin: 0 0 0;
+    }
+    #livenode{
+         margin: 0 0 0;
+    }
+    .form_footer{
+        margin-top: 0;
+    }
+      .form-top h3::after{
+        width: 200px;
+    }
 }
  
 /* iPhone 5 (portrait)----------- */
@@ -279,5 +321,23 @@ and (orientation : landscape) {
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
-/* STYLES GO HERE */
+   #myiframe{
+    min-height: 600px;
+    }
+    .welcomescreen-inner{
+        padding-top:10px;
+        height: 500px;
+    }
+    .form-top h1{
+        margin: 0 0 0;
+    }
+    #livenode{
+         margin: 0 0 0;
+    }
+    .form_footer{
+        margin-top: 0;
+    }
+      .form-top h3::after{
+        width: 200px;
+    }
 }
