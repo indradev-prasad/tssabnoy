@@ -242,6 +242,7 @@ function message_handle(){
 }
 
 function gotMediaError(error) {
+  alert("hiiii");
   console.log('navigator.getUserMedia error: ', error);
 }
 
