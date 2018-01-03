@@ -246,6 +246,68 @@ and (max-device-width : 480px) {
      .chat-section{
         display: none;
      }
+     #conversation{
+        max-height: 300px;
+     }
+}
+/*pure landscape*/
+@media only screen
+and (min-device-width : 480px)
+and (max-device-width : 700px) 
+{
+   .video-section{
+        width: 100%;
+
+     }
+     .video_frame{
+        height: 300px;
+     }
+     #local_video{
+        height: 110px;
+        top:60%;
+        left: 1%;
+     }
+     #next_connect{
+        top: 40%;
+        left: 80%;
+     }
+     .video-button-section{
+       background: rgba(255,255,255,.5);
+     }
+     .video-button-inner{
+        background: none;
+     }
+     .logo-of-video{
+        top:3%;
+        left: 82%;
+     }
+     #remote_video{
+        object-fit: initial;
+        height: 300px;
+     }
+    .chat-section{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+       background-color: transparent;
+     }
+     #conversation_section{
+        position: relative;
+        height: 250px;
+        background-color: transparent;
+     }
+     .live_status_button{
+        display: none;
+     }
+      .start_chat{
+        display: inherit;
+     }
+     .chat-section{
+        display: none;
+     }
+          #conversation{
+        max-height: 200px;
+     }
 }
  
 /* Smartphones (portrait) ----------- */
@@ -301,6 +363,9 @@ and (max-width : 320px) {
      .chat-section{
         display: none;
      }
+          #conversation{
+        max-height: 300px;
+     }
 }
  
 /* iPads (landscape) ----------- */
@@ -342,118 +407,4 @@ max-height: 540px;
 @media only screen
 and (min-width : 1824px) {
 /* STYLES GO HERE */
-}
- 
-/* iPhone 5 (landscape)----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px)
-and (orientation : landscape) {
-       .video-section{
-        width: 100%;
-
-     }
-     .video_frame{
-        height: 450px;
-     }
-     #local_video{
-        height: 110px;
-        top:60%;
-        left: 1%;
-     }
-     #next_connect{
-        top: 40%;
-        left: 80%;
-     }
-     .video-button-section{
-         background: rgba(255,255,255,.5);
-     }
-    .video-button-inner{
-        background: none;
-     }
-     .logo-of-video{
-        top:3%;
-        left: 82%;
-     }
-          #remote_video{
-            object-fit: initial;
-        height: 450px;
-     }
-     .chat-section{
-        position: absolute;
-        top: 10%;
-        width: 100%;
-       background-color: transparent;
-     }
-     #conversation_section{
-        position: relative;
-        height: 350px;
-        background-color: transparent;
-     }
-     .live_status_button{
-        display: none;
-     }
-     .start_chat{
-        display: inherit;
-     }
-     .chat-section{
-        display: none;
-     }
-}
- 
-/* iPhone 5 (portrait)----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px)
-and (orientation : portrait) {
-     .video-section{
-        width: 100%;
-
-     }
-     .video_frame{
-        height: 450px;
-     }
-     #local_video{
-        height: 110px;
-        top:60%;
-        left: 1%;
-     }
-     #next_connect{
-        top: 40%;
-        left: 80%;
-     }
-     .video-button-section{
-         background: rgba(255,255,255,.5);
-     }
-    .video-button-inner{
-        background: none;
-     }
-     .logo-of-video{
-        top:3%;
-        left: 82%;
-     }
-          #remote_video{
-            object-fit: initial;
-        height: 450px;
-     }
-     .chat-section{
-        position: absolute;
-        top: 10%;
-        width: 100%;
-       background-color: transparent;
-     }
-     #conversation_section{
-        position: relative;
-        height: 350px;
-        background-color: transparent;
-     }
-     .live_status_button{
-        display: none;
-     }
-     .start_chat{
-        display: inherit;
-     }
-     .chat-section{
-        display: none;
-     }
 }

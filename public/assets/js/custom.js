@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	var height=$(window).height();
-	alert(height+"hieght");
-	var height=$(window).width();
-	alert(height+"width");
+	// var height=$(window).height();
+	// alert(height+"hieght");
+	// var height=$(window).width();
+	// alert(height+"width");
 	// $('html, body').animate({scrollTop: $("#myiframe").offset().top}, 100);
 	$(document).on('click','.welcome-btn',function(){
 		$(".welcomescreen").hide();
