@@ -2768,9 +2768,12 @@ window.addEventListener('load', function() {
     e = d.documentElement,
     g = d.getElementsByTagName('body')[0],
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    var checkischat=document.getElementById('conversation_section_only');
+    if(checkischat!=null){
     document.getElementById('conversation_section_only').setAttribute('style','height:'+y+'px;');
     var iner=y-50;
      document.getElementById('conversation_only').setAttribute('style','height:'+iner+'px;');
+    }
   }
 });
 
