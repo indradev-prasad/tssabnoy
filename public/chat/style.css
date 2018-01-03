@@ -294,7 +294,7 @@ and (max-device-width : 700px)
      }
      #conversation_section{
         position: relative;
-        height: 220px;
+        height: 240px;
         background-color: transparent;
      }
      .live_status_button{
@@ -307,7 +307,7 @@ and (max-device-width : 700px)
         display: none;
      }
           #conversation{
-        max-height: 190px;
+        max-height: 210px;
      }
 }
  
