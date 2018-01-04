@@ -8,7 +8,7 @@ body{
 }
 #myiframe{
 	width: 100%;
-    background-color: #0093FF;
+    background-color: #5F9EA0;
     position: relative;
 }
 .welcomescreen{
@@ -179,17 +179,38 @@ footer ul li {
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
        #myiframe{
-    min-height: 600px;
+    min-height: 400px;
+    }
+        .welcomescreen{
+        top:12%;
     }
     .welcomescreen-inner{
         padding-top:10px;
-        height: 500px;
+        height: auto;
     }
     .form-top h1{
         margin: 0 0 0;
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h3{
+        font-size: 18px;
     }
     #livenode{
          margin: 0 0 0;
+         font-size: 16px;
+    }
+    .welcom-btn-grp{
+       padding: 0px;
+       padding: 5px;
+    }
+    .welcom-btn-grp .btn{
+        font-size: 16px;
     }
     .form_footer{
         margin-top: 0;
@@ -205,18 +226,36 @@ and (max-device-width : 700px) {
        #myiframe{
     min-height: 400px;
     }
+        .welcomescreen{
+        top:12%;
+    }
     .welcomescreen-inner{
         padding-top:10px;
-        height: 350px;
+        height: auto;
     }
     .form-top h1{
         margin: 0 0 0;
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h3{
+        font-size: 18px;
     }
     #livenode{
          margin: 0 0 0;
+         font-size: 16px;
     }
     .welcom-btn-grp{
        padding: 0px;
+       padding: 5px;
+    }
+    .welcom-btn-grp .btn{
+        font-size: 16px;
     }
     .form_footer{
         margin-top: 0;
@@ -230,23 +269,44 @@ and (max-device-width : 700px) {
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
-    #myiframe{
-	min-height: 600px;
+       #myiframe{
+    min-height: 400px;
+    }
+        .welcomescreen{
+        top:12%;
     }
     .welcomescreen-inner{
         padding-top:10px;
-        height: 500px;
+        height: auto;
     }
     .form-top h1{
         margin: 0 0 0;
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h3{
+        font-size: 18px;
     }
     #livenode{
          margin: 0 0 0;
+         font-size: 16px;
+    }
+    .welcom-btn-grp{
+       padding: 0px;
+       padding: 5px;
+    }
+    .welcom-btn-grp .btn{
+        font-size: 16px;
     }
     .form_footer{
         margin-top: 0;
     }
-      .form-top h3::after{
+    .form-top h3::after{
         width: 200px;
     }
 }
@@ -255,22 +315,44 @@ and (max-width : 320px) {
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
-  #myiframe{
-    min-height: 600px;
+       #myiframe{
+    min-height: 400px;
+    }
+        .welcomescreen{
+        top:12%;
     }
     .welcomescreen-inner{
         padding-top:10px;
+        height: auto;
     }
     .form-top h1{
         margin: 0 0 0;
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h3{
+        font-size: 18px;
     }
     #livenode{
          margin: 0 0 0;
+         font-size: 16px;
+    }
+    .welcom-btn-grp{
+       padding: 0px;
+       padding: 5px;
+    }
+    .welcom-btn-grp .btn{
+        font-size: 16px;
     }
     .form_footer{
         margin-top: 0;
     }
-      .form-top h3::after{
+    .form-top h3::after{
         width: 200px;
     }
 }
@@ -280,22 +362,44 @@ and (max-device-width : 1024px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
-  #myiframe{
-    min-height: 600px;
+       #myiframe{
+    min-height: 400px;
+    }
+        .welcomescreen{
+        top:12%;
     }
     .welcomescreen-inner{
         padding-top:10px;
+        height: auto;
     }
     .form-top h1{
         margin: 0 0 0;
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h2{
+        font-size: 20px;
+    }
+    .form-top h3{
+        font-size: 18px;
     }
     #livenode{
          margin: 0 0 0;
+         font-size: 16px;
+    }
+    .welcom-btn-grp{
+       padding: 0px;
+       padding: 5px;
+    }
+    .welcom-btn-grp .btn{
+        font-size: 16px;
     }
     .form_footer{
         margin-top: 0;
     }
-      .form-top h3::after{
+    .form-top h3::after{
         width: 200px;
     }
 }

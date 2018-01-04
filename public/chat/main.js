@@ -97,7 +97,6 @@ p.on('signal', function (data) {
                      socket.emit('hand_shake',{'node_id':my_node_id,'node_data':node_data}); 
                    }, 1000);
              }
-             alert(node_data);
      }
   //end here
   }
@@ -336,9 +335,6 @@ window.addEventListener('load', function() {
     g = d.getElementsByTagName('body')[0],
     x = w.innerWidth || e.clientWidth || g.clientWidth,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    if(x<1024){
-         y=y-100;//for phone
-    }
     var checkischat=document.getElementById('conversation_section_only');
     if(checkischat!=null){
     document.getElementById('conversation_section_only').setAttribute('style','height:'+y+'px;');

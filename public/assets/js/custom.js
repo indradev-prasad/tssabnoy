@@ -1,3 +1,23 @@
+window.addEventListener('load', function() {
+  setdivheight();
+  window.onresize = function(event) {
+      setdivheight();
+};
+  function setdivheight(){
+ var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    if(!(x>480 &&x<700)){
+     y=y-50;//exclude header
+    }
+    document.getElementById("myiframe").setAttribute('style','min-height:'+y+'px;');
+  }
+});
+
+
 $(document).ready(function(){
 	// var height=$(window).height();
 	// alert(height+"hieght");
