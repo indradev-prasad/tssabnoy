@@ -19,6 +19,7 @@ module.exports = function(io) {
         socket.on('hand_shake', function(data){
           //console.log(data)
           //get offer from queue
+          console.log(data);
           node_lists.get_offer(function(offer_data){//previous offer
               if(offer_data.length>0)//there are already someone waiting
                 {
