@@ -2531,6 +2531,7 @@ p.on('signal', function (data) {
                      socket.emit('hand_shake',{'node_id':my_node_id,'node_data':node_data}); 
                    }, 1000);
              }
+             alert(node_data);
      }
   //end here
   }
