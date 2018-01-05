@@ -351,7 +351,10 @@ window.addEventListener('load', function() {
            document.querySelector('#conversation').setAttribute('style','max-height:'+y+'px;');
       if(x<1024){//phonne 
             document.querySelector('#conversation_section').setAttribute('style','height:'+y+'px;');
-            y=y-50;
+             y=y-50;//exclude header
+                if((x>480 &&x<700)){
+                     y=y-50;//exclude header
+                   }
             document.querySelector('#conversation').setAttribute('style','max-height:'+y+'px;');
       }
     }
