@@ -18,6 +18,7 @@ body{
 	z-index: 0;
 	height: auto;
 	top: 0;
+    object-fit: cover;
 }
 #local_video{
 	position: absolute;
@@ -230,7 +231,6 @@ and (max-device-width : 480px) {
      	left: 82%;
      }
      #remote_video{
-        object-fit: initial;
         height: 450px;
      }
     .chat-section{
@@ -293,7 +293,6 @@ and (max-device-width : 700px)
         left: 82%;
      }
      #remote_video{
-        object-fit: initial;
         height: 300px;
      }
     .chat-section{
@@ -354,7 +353,6 @@ and (max-width : 320px) {
      	left: 82%;
      }
           #remote_video{
-            object-fit: initial;
         height: 450px;
      }
      .chat-section{

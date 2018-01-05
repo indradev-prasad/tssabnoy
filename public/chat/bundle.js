@@ -2775,6 +2775,20 @@ window.addEventListener('load', function() {
     var iner=y-50;
      document.getElementById('conversation_only').setAttribute('style','height:'+iner+'px;');
     }
+    //for video
+    var checkvideo=document.querySelector('.video_frame');
+    if(checkvideo!=null){
+      document.querySelector('.video_frame').setAttribute('style','height:'+y+'px;');
+      document.querySelector('#remote_video').setAttribute('style','height:'+y+'px;');
+       document.querySelector('#conversation_section').setAttribute('style','height:'+y+'px;');
+       y=y-50;
+           document.querySelector('#conversation').setAttribute('style','max-height:'+y+'px;');
+      if(x<1024){//phonne 
+            document.querySelector('#conversation_section').setAttribute('style','height:'+y+'px;');
+            y=y-50;
+            document.querySelector('#conversation').setAttribute('style','max-height:'+y+'px;');
+      }
+    }
   }
 });
 
