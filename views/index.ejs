@@ -28,6 +28,7 @@
           iframe.src = iframe.src;
       });
             document.querySelector("#leave_room").addEventListener('click',function(){
+               document.getElementById('myiframe').innerHTML='';
               var iframe = document.getElementById('myiframe');
                 iframe.src ='';
               location.reload();
