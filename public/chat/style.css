@@ -195,6 +195,11 @@ body{
 #conversation_only{
     max-height: 540px;
 }
+.chat_only_typing{
+    position: absolute;
+    bottom: 104%;
+    display: none;
+}
 
 
 

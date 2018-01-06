@@ -8,17 +8,17 @@ module.exports = function(app) {
 		var data={};
           data.total= fs.readFileSync('active_node.json', 'utf8');
            data.total=Math.floor(Math.random() * 20)+100+parseInt(data.total);
-		data.page_title="TssAbnoy - Home - Live with Strangers";
+		data.page_title="TssAbnoy - Live with Strangers";
        res.render('index.ejs',{data:data}); 
 	});
 		app.get('/terms',function(req, res) {
 					var data={};
-		data.page_title="TssAbnoy - Terms of service - Live with Strangers";
+		data.page_title="TssAbnoy - Live with Strangers";
        res.render('terms.ejs',{data:data}); 
 	});
 		app.get('/thank-you',function(req, res) {
 					var data={};
-		data.page_title="TssAbnoy - Thank you - Live with Strangers";
+		data.page_title="TssAbnoy - Live with Strangers";
        res.render('thankyou.ejs',{data:data}); 
 	});
       app.post('/contact-post',function(req, res) {

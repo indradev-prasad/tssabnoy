@@ -102,9 +102,9 @@ $(document).ready(function(){
         if(comment!='')
         {
           if (comment.length<1000){
-          	       if(comment.length<50)
+          	       if(comment.length<5)
           	       {
-                      contact_form_obj.find("#comment").parent().append("<p class='error'>Query cant't be less than 50 charactors.</p>");
+                      contact_form_obj.find("#comment").parent().append("<p class='error'>Query cant't be less than 5 charactors.</p>");
           	       }
           	       else{
                    return_val=true;

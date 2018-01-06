@@ -218,6 +218,9 @@ and (max-device-width : 480px) {
     .form-top h3::after{
         width: 200px;
     }
+    .contact-form{
+        padding-bottom: 25px;
+    }
 }
 /*pure landscape*/
 @media only screen
@@ -262,6 +265,9 @@ and (max-device-width : 700px) {
     }
     .form-top h3::after{
         width: 200px;
+    }
+        .contact-form{
+        padding-bottom: 25px;
     }
 }
 
@@ -309,6 +315,9 @@ and (max-width : 320px) {
     .form-top h3::after{
         width: 200px;
     }
+        .contact-form{
+        padding-bottom: 25px;
+    }
 }
  
 /* iPads (portrait and landscape) ----------- */
@@ -354,6 +363,9 @@ and (max-device-width : 1024px) {
     }
     .form-top h3::after{
         width: 200px;
+    }
+        .contact-form{
+        padding-bottom: 25px;
     }
 }
  
@@ -401,6 +413,9 @@ and (orientation : portrait) {
     }
     .form-top h3::after{
         width: 200px;
+    }
+        .contact-form{
+        padding-bottom: 25px;
     }
 }
  

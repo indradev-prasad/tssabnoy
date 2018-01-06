@@ -23,4 +23,10 @@ module.exports = {
                       return callback(rows);
                 });
     },
+   clear_previous:function(data,callback) {
+           db_con.query("DELETE FROM node_lists WHERE node_id = ? ", [data.node_id], function(err, results) {
+        // console.log('new node added successffully :'+data.id)
+    });
+           callback(true);
+    },
 };

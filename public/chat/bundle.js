@@ -2545,7 +2545,8 @@ document.querySelector('#send_button').addEventListener('click', function (ev) {
   message_handle();
 })
   document.querySelector('#next_connect').addEventListener('click', function (ev) {
-      window.parent.document.getElementById('reload').click(); 
+      //window.parent.document.getElementById('reload').click(); 
+      new_connect();
 })
 document.querySelector('#chatMessage').addEventListener('keypress', function (e) {
                  var key = e.which || e.keyCode;
@@ -2588,6 +2589,19 @@ document.querySelector('#chatMessage').addEventListener('keypress', function (e)
            document.querySelector('.chat-section').setAttribute('style','display:none;');
            }
   })
+            //socket io code
+            socket.on('broadcast_offer', function (data) { 
+              node_id=data.node_id;
+                   check=false;
+                   p.destroy();
+                  gotMedia(stream);
+                   p.signal(JSON.parse(data.node_data));
+      });
+              socket.on('broadcast_answer', function (data) { 
+                //console.log(data);
+                p.signal(JSON.parse(data.node_data));
+      });
+//end here
       //end here
     }
 p.on('connect', function () {
@@ -2597,6 +2611,24 @@ p.on('connect', function () {
   document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
   document.querySelector('#chatMessage').focus();
 })
+function new_connect(){
+  connected=false;
+  node_id='';
+   check=true;
+   node_data='';
+    p.destroy();
+   if(remote_stream!=''){
+      remote_stream.getVideoTracks()[0].stop();
+        remote_stream.getAudioTracks()[0].stop();
+    remote_stream='';
+       document.querySelector('.logo-of-video').setAttribute('style','display:none;');
+        video = document.querySelector('#remote_video');
+        video.src='';
+   }
+  gotMedia(stream);
+    document.querySelector(".spin_loader").setAttribute('style','display:block;')
+  document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
+}
 
 p.on('data', function (data) {
   document.querySelector('#conversation').innerHTML=document.querySelector('#conversation').innerHTML+'<div class="clearfix you-message-li"><blockquote class="you-message pull-left">'+data+'</blockquote></div>';
@@ -2616,7 +2648,9 @@ p.on('data', function (data) {
   	//video.destroy();
       if(connected==true)
       {
-           document.querySelector('#next_connect').click();//connected but they leave me then I will find next one 
+         setTimeout(function(){ 
+               document.querySelector('#next_connect').click();//connected but they leave me then I will find next one 
+               }, 100);
       }
   })
   function hand_media_tracks(){
@@ -2661,21 +2695,6 @@ p.on('data', function (data) {
        }
        //now we will mute local voice
   }
-
-
-  //socket io code
-            socket.on('broadcast_offer', function (data) { 
-              node_id=data.node_id;
-                   check=false;
-                   p.destroy();
-                  gotMedia(stream);
-                   p.signal(JSON.parse(data.node_data));
-      });
-              socket.on('broadcast_answer', function (data) { 
-                //console.log(data);
-                p.signal(JSON.parse(data.node_data));
-      });
-//end here
 }
 
 function message_handle(){
@@ -2691,9 +2710,9 @@ function message_handle(){
 }
 
 function gotMediaError(error) {
+  parent.chat_only_selected=false;//they will access only chat
+  window.parent.document.getElementById("reload").click();
   console.log('navigator.getUserMedia error: ', error);
-   parent.chat_only_selected=false;//they will access only chat
-  document.querySelector('#next_connect').click();
 }
 
 //code of socket for chat only
@@ -2716,7 +2735,24 @@ function gotMediaError(error) {
                 document.querySelector('#conversation_only').innerHTML=document.querySelector('#conversation_only').innerHTML+'<div class="clearfix you-message-li"><blockquote class="you-message pull-left">'+data.message+'</blockquote></div>';
                   var objDiv = document.getElementById("conversation_only");
                     objDiv.scrollTop = objDiv.scrollHeight;
-      });
+      }); 
+             var count_typing=1;
+            socket.on('chat_typing_broadcast', function (data) { 
+                         var typing_str="";
+                       for(var i=0;i<count_typing;i++)
+                       {
+                           typing_str=typing_str+'.';
+                       }
+                       if(count_typing==5){
+                        count_typing=1;
+                       }
+                       count_typing++;
+                         document.querySelector('.chat_only_typing').innerHTML="Typing"+typing_str;
+                       document.querySelector('.chat_only_typing').setAttribute('style','display:block;');
+                         setTimeout(function(){ 
+                        document.querySelector('.chat_only_typing').setAttribute('style','display:none;');
+                        }, 1000);
+                 });
                 if(check_chat_olny==true)
                 {
                          document.querySelector("#send_button_next").addEventListener('click',function(){
@@ -2741,6 +2777,11 @@ function gotMediaError(error) {
                if (key === 13) { // 13 is enter
                      document.querySelector("#send_button_only").click();
                      }
+                     //chat typing broad cast
+                          if((check_chat_connected==true)||(stranger_node_id!='')){
+                  socket.emit('chat_typing_broadcast',{'stranger_node_id':stranger_node_id,'my_node_id':my_node_id,'message':'typing'}); 
+                                }
+
              });
                 }
      function chat_connected(){

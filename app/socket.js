@@ -18,7 +18,8 @@ module.exports = function(io) {
     });
         socket.on('hand_shake', function(data){
           //console.log(data)
-          //get offer from queue
+          node_lists.clear_previous(data,function(){//my prvious added node
+                          //get offer from queue
           node_lists.get_offer(function(offer_data){//previous offer
               if(offer_data.length>0)//there are already someone waiting
                 {
@@ -27,6 +28,7 @@ module.exports = function(io) {
                 else{
                   node_lists.add_node(data);//this will added in queue for waiting
                 }
+              });
           });
     });
                 socket.on('broadcast_answer', function(data){
@@ -58,6 +60,9 @@ module.exports = function(io) {
                     });
                   socket.on('chat_message_broadcast', function(data){
                   io.to(data.stranger_node_id).emit('chat_message_broadcast',data);//broadcast
+                    });
+                    socket.on('chat_typing_broadcast', function(data){
+                  io.to(data.stranger_node_id).emit('chat_typing_broadcast',data);//broadcast
                     });
 
     socket.on('disconnect', function(){
