@@ -2751,7 +2751,7 @@ function gotMediaError(error) {
                        document.querySelector('.chat_only_typing').setAttribute('style','display:block;');
                          setTimeout(function(){ 
                         document.querySelector('.chat_only_typing').setAttribute('style','display:none;');
-                        }, 1000);
+                        }, 5000);
                  });
                 if(check_chat_olny==true)
                 {
