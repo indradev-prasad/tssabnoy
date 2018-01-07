@@ -391,9 +391,10 @@ window.addEventListener('load', function() {
     var checkischat=document.getElementById('conversation_section_only');
     if(checkischat!=null){
     document.getElementById('conversation_section_only').setAttribute('style','height:'+y+'px;');
-    var iner=y-50;
+    var iner=y-80;
      document.getElementById('conversation_only').setAttribute('style','height:'+iner+'px;');
     // document.querySelector("#conversation_section_only").scrollIntoView();
+
     }
     //for video
     var checkvideo=document.querySelector('.video_frame');
@@ -414,6 +415,16 @@ window.addEventListener('load', function() {
       }
      // document.querySelector(".video_frame").scrollIntoView();
     }
+  }
+  function chat_input_focus(){
+        var checkvideo=document.querySelector('.video_frame');
+        if(checkvideo!=null){
+            document.querySelector(".video_frame").scrollIntoView();
+        }
+         var checkischat=document.getElementById('conversation_section_only');
+         if(checkischat!=null){
+            document.querySelector("#conversation_section_only").scrollIntoView();
+         }
   }
 });
 
