@@ -84,7 +84,8 @@
     <script type="text/javascript">
         function chat_input_focus(){
           //alert("hii");
-        var checkvideo=document.querySelector('.video_frame');
+           setTimeout(function(){ 
+                            var checkvideo=document.querySelector('.video_frame');
         if(checkvideo!=null){
             document.querySelector(".video_frame").scrollIntoView();
         }
@@ -92,6 +93,7 @@
          if(checkischat!=null){
             document.querySelector("#conversation_section_only").scrollIntoView();
          }
+                   }, 1000);
   }
     </script>
 </body>
