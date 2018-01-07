@@ -2850,16 +2850,6 @@ window.addEventListener('load', function() {
      // document.querySelector(".video_frame").scrollIntoView();
     }
   }
-  function chat_input_focus(){
-        var checkvideo=document.querySelector('.video_frame');
-        if(checkvideo!=null){
-            document.querySelector(".video_frame").scrollIntoView();
-        }
-         var checkischat=document.getElementById('conversation_section_only');
-         if(checkischat!=null){
-            document.querySelector("#conversation_section_only").scrollIntoView();
-         }
-  }
 });
 
 

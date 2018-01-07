@@ -45,7 +45,7 @@
             </div>
    <footer class="panel-footer list-group-item" id="conversation_footer">
          <div class="input-group">
-              <input type="email" class="form-control" id="chatMessage" placeholder="Say something">
+              <input type="email" class="form-control" id="chatMessage" placeholder="Say something" onfocus="chat_input_focus()">
                    <span class="input-group-btn"><button id="send_button" class="btn btn-default" type="submit">SEND</button> </span> 
          </div>
    </footer>
@@ -70,7 +70,7 @@
                     <span class="chat_only_typing">Typing</span>
          <div class="input-group">
            <span class="input-group-btn"><button id="send_button_next" class="btn btn-default" type="button">NEXT</button> </span> 
-              <input type="email" class="form-control" id="chatMessage_only" placeholder="Say something">
+              <input type="email" class="form-control" id="chatMessage_only" placeholder="Say something" onfocus="chat_input_focus()">
                    <span class="input-group-btn"><button id="send_button_only" class="btn btn-default" type="submit" disabled="disabled">SEND</button> </span> 
          </div>
    </footer>
@@ -81,5 +81,18 @@
 <!--end here-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script src="bundle.js"></script>
+    <script type="text/javascript">
+        function chat_input_focus(){
+          //alert("hii");
+        var checkvideo=document.querySelector('.video_frame');
+        if(checkvideo!=null){
+            document.querySelector(".video_frame").scrollIntoView();
+        }
+         var checkischat=document.getElementById('conversation_section_only');
+         if(checkischat!=null){
+            document.querySelector("#conversation_section_only").scrollIntoView();
+         }
+  }
+    </script>
 </body>
-</html>
+</html> 
