@@ -2800,6 +2800,7 @@ function gotMediaError(error) {
                 check_chat_connected=true;
                 document.querySelector('#chatMessage_only').focus();
                  document.querySelector("#send_button_only").removeAttribute('disabled','disabled')
+                 chat_input_focus();
      }
      function chat_disconnected(){
                  stranger_node_id='';
@@ -2807,6 +2808,27 @@ function gotMediaError(error) {
                document.querySelector("#send_button_only").setAttribute('disabled','disabled')
      }
 //end here
+        function chat_input_focus(){
+          //alert("hii");
+           var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    if(x<1024){
+           setTimeout(function(){ 
+                            var checkvideo=document.querySelector('.video_frame');
+        if(checkvideo!=null){
+            document.querySelector(".video_frame").scrollIntoView();
+        }
+         var checkischat=document.getElementById('conversation_section_only');
+         if(checkischat!=null){
+            document.querySelector("#conversation_section_only").scrollIntoView();
+         }
+                   }, 2000);
+         }
+  }
 /*
 js for iframe below
 */
