@@ -2743,7 +2743,15 @@ function gotMediaError(error) {
       }); 
              var count_typing=1;
              var typing_check=false;
-              setInterval(function(){ 
+            socket.on('chat_typing_broadcast', function (data) { 
+                         if(data.my_node_id==stranger_node_id){
+                           typing_check=true;
+                       }
+                 });
+                if(check_chat_olny==true)
+                {
+                  //typing start here
+                    setInterval(function(){ 
                       var typing_str="";
                        for(var i=0;i<count_typing;i++)
                        {
@@ -2761,13 +2769,7 @@ function gotMediaError(error) {
                 }
                  typing_check=false;
               }, 1000);
-            socket.on('chat_typing_broadcast', function (data) { 
-                         if(data.my_node_id==stranger_node_id){
-                           typing_check=true;
-                       }
-                 });
-                if(check_chat_olny==true)
-                {
+                  //end here typing
                          document.querySelector("#send_button_next").addEventListener('click',function(){
                  chat_disconnected();
                  document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
