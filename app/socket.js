@@ -77,7 +77,7 @@ module.exports = function(io) {
     });
      function chat_left_notification(data){
         if(data.length>0){
-           io.to(data[0].stranger_node_id).emit('broadcast_chat_left',{'message':'Stranger left.'});//broadcast
+           io.to(data[0].stranger_node_id).emit('broadcast_chat_left',{'stranger_node_id':data[0].my_node_id});//broadcast
         }
     }
     //chat left notification

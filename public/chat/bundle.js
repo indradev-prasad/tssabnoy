@@ -2724,34 +2724,46 @@ function gotMediaError(error) {
       });
      socket.on('broadcast_chat_left', function (data) { 
                 //console.log(data);
+                if(data.stranger_node_id==stranger_node_id){
                 chat_disconnected();
-              document.querySelector(".live_status_button").innerHTML="Stranger left.";
+                 document.querySelector(".live_status_button").innerHTML="Stranger left.";
+                }
               //alert("hiii");
               // setTimeout(function(){ 
               //   document.querySelector("#send_button_next").click(); 
               //  }, 1000);
       });
           socket.on('chat_message_broadcast', function (data) { 
+            if(data.my_node_id==stranger_node_id){
                 document.querySelector('#conversation_only').innerHTML=document.querySelector('#conversation_only').innerHTML+'<div class="clearfix you-message-li"><blockquote class="you-message pull-left">'+data.message+'</blockquote></div>';
                   var objDiv = document.getElementById("conversation_only");
                     objDiv.scrollTop = objDiv.scrollHeight;
+                  }
       }); 
              var count_typing=1;
-            socket.on('chat_typing_broadcast', function (data) { 
-                         var typing_str="";
+             var typing_check=false;
+              setInterval(function(){ 
+                      var typing_str="";
                        for(var i=0;i<count_typing;i++)
                        {
                            typing_str=typing_str+'.';
                        }
-                       if(count_typing==5){
+                 if(count_typing==5){
                         count_typing=1;
                        }
-                       count_typing++;
-                         document.querySelector('.chat_only_typing').innerHTML="Typing"+typing_str;
+                        count_typing++;
+              if(typing_check){
+                       document.querySelector('.chat_only_typing').innerHTML="Typing"+typing_str;
                        document.querySelector('.chat_only_typing').setAttribute('style','display:block;');
-                         setTimeout(function(){ 
-                        document.querySelector('.chat_only_typing').setAttribute('style','display:none;');
-                        }, 5000);
+                } else{
+                   document.querySelector('.chat_only_typing').setAttribute('style','display:none;');
+                }
+                 typing_check=false;
+              }, 1000);
+            socket.on('chat_typing_broadcast', function (data) { 
+                         if(data.my_node_id==stranger_node_id){
+                           typing_check=true;
+                       }
                  });
                 if(check_chat_olny==true)
                 {
@@ -2815,6 +2827,7 @@ window.addEventListener('load', function() {
     document.getElementById('conversation_section_only').setAttribute('style','height:'+y+'px;');
     var iner=y-50;
      document.getElementById('conversation_only').setAttribute('style','height:'+iner+'px;');
+     document.querySelector("#conversation_section_only").scrollIntoView();
     }
     //for video
     var checkvideo=document.querySelector('.video_frame');
@@ -2833,6 +2846,7 @@ window.addEventListener('load', function() {
              y=y-50;//exclude header
             document.querySelector('#conversation').setAttribute('style','max-height:'+y+'px;');
       }
+      document.querySelector(".video_frame").scrollIntoView();
     }
   }
 });
