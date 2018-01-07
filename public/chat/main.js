@@ -194,6 +194,7 @@ function new_connect(){
   gotMedia(stream);
     document.querySelector(".spin_loader").setAttribute('style','display:block;')
   document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
+  document.querySelector("#conversation").innerHTML='';
 }
 
 p.on('data', function (data) {

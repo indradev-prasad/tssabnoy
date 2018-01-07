@@ -81,6 +81,7 @@ body{
     bottom: 40%;
     width: 150px;
     height: 150px;
+    z-index: 3;
 
 }
 #conversation{
