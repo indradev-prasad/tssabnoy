@@ -2827,7 +2827,7 @@ window.addEventListener('load', function() {
     document.getElementById('conversation_section_only').setAttribute('style','height:'+y+'px;');
     var iner=y-50;
      document.getElementById('conversation_only').setAttribute('style','height:'+iner+'px;');
-     document.querySelector("#conversation_section_only").scrollIntoView();
+    // document.querySelector("#conversation_section_only").scrollIntoView();
     }
     //for video
     var checkvideo=document.querySelector('.video_frame');
@@ -2846,7 +2846,7 @@ window.addEventListener('load', function() {
              y=y-50;//exclude header
             document.querySelector('#conversation').setAttribute('style','max-height:'+y+'px;');
       }
-      document.querySelector(".video_frame").scrollIntoView();
+     // document.querySelector(".video_frame").scrollIntoView();
     }
   }
 });
