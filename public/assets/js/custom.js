@@ -21,16 +21,6 @@ window.addEventListener('load', function() {
 
 
 $(document).ready(function(){
-    var my_previous_token=localStorage.getItem('my_previous_token');
-      if(my_previous_token!=null){
-       $.ajax({
-       	url: "/clearprevious", 
-       	type:"POST",
-       	data:{'my_previous_token':my_previous_token},
-       	success: function(result){
-        
-        }}); 
-      }
 	// var height=$(window).height();
 	// alert(height+"hieght");
 	// var height=$(window).width();
