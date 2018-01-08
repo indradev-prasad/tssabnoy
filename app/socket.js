@@ -17,7 +17,7 @@ module.exports = function(io) {
        //console.log("not ready")
     });
         socket.on('hand_shake', function(data){
-          //console.log(data)
+          console.log(data)
           node_lists.clear_previous(data,function(){//my prvious added node
                           //get offer from queue
           node_lists.get_offer(function(offer_data){//previous offer
