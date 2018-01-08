@@ -2462,6 +2462,12 @@ navigator.getUserMedia({ video: true, audio: true }, gotMedia, gotMediaError)
     var stranger_node_id='';
     var check_chat_connected=false;
     var socket = io.connect(SITE_URL);
+    //clear previous
+    var my_previous_token=localStorage.getItem('my_previous_token');
+      if(my_previous_token!=null){
+         socket.emit('clear_previous_token',{'my_previous_token':my_previous_token});   
+      }
+    //end here
       socket.on('hand_shake', function (data) {
         if(!check_chat_olny)
         {
@@ -2479,6 +2485,8 @@ navigator.getUserMedia({ video: true, audio: true }, gotMedia, gotMediaError)
               //alert(chat_node_id);
               socket.emit('new_chat_node',{'my_node_id':my_node_id}); 
         }
+        //set previous token
+        localStorage.setItem("my_previous_token",data.socket_id);
       });
 var p;//global variable
 var check=true;

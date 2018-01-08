@@ -65,6 +65,13 @@ module.exports = function(io) {
                   io.to(data.stranger_node_id).emit('chat_typing_broadcast',data);//broadcast
                     });
 
+
+                socket.on('clear_previous_token', function(data){
+                  console.log(data);
+                   node_lists.delete_node({'id':data.my_previous_token});
+                   chat_node_lists.delete_node({'my_node_id':data.my_previous_token}); 
+                    });
+
     socket.on('disconnect', function(){
     	--total_no;//leave node
         console.log('a node leaved: '+ total_no);
