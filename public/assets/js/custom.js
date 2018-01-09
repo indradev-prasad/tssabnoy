@@ -35,6 +35,17 @@ $(document).ready(function(){
 		$(".welcomescreen").hide();
          $("#myiframe").attr('src','chat/iframe.html');
 	});
+
+   window.onbeforeunload = function(){
+        $.ajax({url: "/clearprevioustoken",
+        	type:"POST",
+           data:{'token':previous_token},
+              success: function(result){
+           }
+       
+            });
+            };
+
 	$(document).on('click','.logo',function(){
           window.location.href="/";
 	});

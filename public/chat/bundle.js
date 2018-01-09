@@ -2479,6 +2479,7 @@ navigator.getUserMedia({ video: true, audio: true }, gotMedia, gotMediaError)
               //alert(chat_node_id);
               socket.emit('new_chat_node',{'my_node_id':my_node_id}); 
         }
+        parent.previous_token=data.socket_id;
       });
 var p;//global variable
 var check=true;

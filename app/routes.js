@@ -1,6 +1,8 @@
 // app/routes.js
 mailer=require('./models/mailer'); //add modles
 var fs = require('fs');
+chat_node_lists=require('./models/chat_node_lists'); //add modles
+node_lists=require('./models/node_lists'); //add modles
 module.exports = function(app) {
 
 	app.get('/',function(req, res) {
@@ -24,6 +26,13 @@ module.exports = function(app) {
       app.post('/contact-post',function(req, res) {
       	mailer.send_mail(req.body);
          res.redirect('/thank-you');
+	});
+    app.post('/clearprevioustoken',function(req, res) {
+           var token=req.body.token;
+           if(token!=''){
+                node_lists.delete_node({'id':token});
+               chat_node_lists.delete_node({'my_node_id':token}); 
+           }
 	});
 
       //The 404 Route (ALWAYS Keep this as the last route)
