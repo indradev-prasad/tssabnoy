@@ -21,6 +21,16 @@ window.addEventListener('load', function() {
 
 
 $(document).ready(function(){
+	   var token=localStorage.getItem("previous_token");
+	   if(token!=null){
+        $.ajax({url: "/clearprevioustoken",
+        	type:"POST",
+           data:{'token':token},
+              success: function(result){
+           }
+       
+            });
+	   }
 	// var height=$(window).height();
 	// alert(height+"hieght");
 	// var height=$(window).width();
@@ -37,13 +47,7 @@ $(document).ready(function(){
 	});
 
    window.onbeforeunload = function(){
-        $.ajax({url: "/clearprevioustoken",
-        	type:"POST",
-           data:{'token':previous_token},
-              success: function(result){
-           }
-       
-            });
+   	localStorage.setItem('previous_token', previous_token);
             };
 
 	$(document).on('click','.logo',function(){
