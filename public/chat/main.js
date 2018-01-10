@@ -70,14 +70,14 @@ p=new Peer({ initiator: check, stream: stream,
       config: {
         iceServers: [
           {
-            "urls": "stun:tssabnoy.com",
-            "username": 'indradev',
-            "credential": 'indradev@123'
+            "urls": "stun:numb.viagenie.ca",
+            "username": 'kumarindradevd9211@gmail.com',
+            "credential": 'test@123'
           },
           {
-            "urls": "turn:tssabnoy.com",
-            "username": "indradev",
-            "credential": "indradev@123"
+            "urls": "turn:numb.viagenie.ca",
+            "username": "kumarindradevd9211@gmail.com",
+            "credential": "test@123"
           }
         ]
       }
