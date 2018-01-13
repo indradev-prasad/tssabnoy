@@ -1,9 +1,18 @@
 // app/routes.js
+require('dotenv').config();
 mailer=require('./models/mailer'); //add modles
 var fs = require('fs');
 chat_node_lists=require('./models/chat_node_lists'); //add modles
 node_lists=require('./models/node_lists'); //add modles
 module.exports = function(app) {
+
+    if(process.env.SITE_MODE!='dev')
+     {
+           app.get('/*', function(req, res, next) {
+    if (req.headers.host.match(/^www/) !== null ) res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url, 301);
+    else next();
+});
+    }
 
 	app.get('/',function(req, res) {
 		//get active node
