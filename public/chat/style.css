@@ -68,6 +68,7 @@ body{
 }
 #conversation_section{
 	position: relative;
+    margin-bottom: 0px;
 }
 #conversation_footer{
 	position: absolute;
@@ -125,7 +126,8 @@ body{
 	background-color: #CECECE;
 }
 #conversation_section_only{
-	position: relative;;
+	position: relative;
+    margin-bottom: 0px;
 }
 #conversation_only{
 	overflow: auto;
