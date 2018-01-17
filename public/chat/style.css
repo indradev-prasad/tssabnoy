@@ -107,9 +107,17 @@ body{
 }
 .me-message-li{
 	padding-left: 10px;
+        line-height: 1;
 }
 .you-message-li{
 	padding-right: 10px;
+        line-height: 1;
+}
+#conversation blockquote{
+    margin-bottom: 10px;
+}
+#conversation_only blockquote{
+    margin-bottom: 10px;
 }
 .chat-section-only{
 	padding-left: 0px;
