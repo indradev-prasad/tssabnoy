@@ -2858,7 +2858,8 @@ window.addEventListener('load', function() {
       document.querySelector('#remote_video').setAttribute('style','height:'+y+'px;');
        document.querySelector('#conversation_section').setAttribute('style','height:'+y+'px;');
        y=y-50;
-           document.querySelector('#conversation').setAttribute('style','max-height:'+y+'px;');
+       var nophone=y-30;
+           document.querySelector('#conversation').setAttribute('style','max-height:'+nophone+'px;');
       if(x<1024){//phonne 
        // y=y-20;
                 if(!(x>480 &&x<700)){
