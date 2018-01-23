@@ -39,8 +39,29 @@ module.exports = function(app) {
     app.post('/clearprevioustoken',function(req, res) {
            var token=req.body.token;
            if(token!=''){
-                node_lists.delete_node({'id':token});
+               // node_lists.delete_node({'id':token});
                chat_node_lists.delete_node({'my_node_id':token}); 
+               //delete start here
+                var file=fs.readFileSync('node_lists.json', 'utf8');
+      if(file=='')
+      {
+        file="[]";
+      }
+      var obj;
+       try {
+    obj = JSON.parse(file);
+       } catch (e) {
+       obj=[];
+     }
+          var obj_data=obj;
+          var file_data=[];
+            for(var i=0;i<obj_data.length;i++){//clear first data
+              if(obj_data[i].node_id!=data.node_id){
+                  file_data.push({"node_id":obj_data[i].node_id,"node_data":obj_data[i].node_data});
+              }
+            }
+            fs.writeFile("node_lists.json",JSON.stringify(file_data),function(err){if(err){console.log(err)}});
+               //end here
            }
 	});
 

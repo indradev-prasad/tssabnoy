@@ -17,19 +17,29 @@ module.exports = function(io) {
        //console.log("not ready")
     });
         socket.on('hand_shake', function(data){
-          console.log(data)
-          node_lists.clear_previous(data,function(){//my prvious added node
-                          //get offer from queue
-          node_lists.get_offer(function(offer_data){//previous offer
-              if(offer_data.length>0)//there are already someone waiting
-                {
-                   socket.emit('broadcast_offer',offer_data[0]);
-                }
-                else{
-                  node_lists.add_node(data);//this will added in queue for waiting
-                }
-              });
-          });
+          //start here file data
+           var retrn_data=delete_node_lists(data);
+            if(retrn_data.length>0){
+                 //console.log(retrn_data[0]);//broad cast
+                    socket.emit('broadcast_offer',retrn_data[0]);
+                 delete_node_lists(retrn_data[0]);
+            } else{
+              add_node_lists(data);
+            }
+          //end here
+          //console.log(data)
+          // node_lists.clear_previous(data,function(){//my prvious added node
+          //                 //get offer from queue
+          // node_lists.get_offer(function(offer_data){//previous offer
+          //     if(offer_data.length>0)//there are already someone waiting
+          //       {
+          //          socket.emit('broadcast_offer',offer_data[0]);
+          //       }
+          //       else{
+          //         node_lists.add_node(data);//this will added in queue for waiting
+          //       }
+          //     });
+          // });
     });
                 socket.on('broadcast_answer', function(data){
                          //console.log(data.node_data);
@@ -68,7 +78,8 @@ module.exports = function(io) {
     socket.on('disconnect', function(){
     	--total_no;//leave node
         console.log('a node leaved: '+ total_no);
-         node_lists.delete_node(socket);
+        delete_node_lists({"node_id":socket.id,"node_data":""});
+         //node_lists.delete_node(socket);
          chat_node_lists.on_left({'my_node_id':socket.id},function(data){
                 //I have notification data now delete my node
                chat_node_lists.delete_node({'my_node_id':socket.id}); 
@@ -86,6 +97,48 @@ module.exports = function(io) {
            io.to(data[0].my_node_id).emit('broadcast_chat_connect',{'stranger_node_id':my_node_id});//id exchange so we can chat
             io.to(my_node_id).emit('broadcast_chat_connect',{'stranger_node_id':data[0].my_node_id});//broadcast
         }
+    }
+
+    //add new node into node lists
+    function add_node_lists(data){
+      var file=fs.readFileSync('node_lists.json', 'utf8');
+      if(file=='')
+      {
+        file="[]";
+      }
+      var obj;
+       try {
+    obj = JSON.parse(file);
+       } catch (e) {
+       obj=[];
+     }
+           obj.push({"node_id":data.node_id,"node_data":data.node_data});
+            fs.writeFile("node_lists.json",JSON.stringify(obj),function(err){if(err){console.log(err)}});
+            return true;
+
+    }
+    function delete_node_lists(data){
+      var file=fs.readFileSync('node_lists.json', 'utf8');
+      if(file=='')
+      {
+        file="[]";
+      }
+      var obj;
+       try {
+    obj = JSON.parse(file);
+       } catch (e) {
+       obj=[];
+     }
+          var obj_data=obj;
+          var file_data=[];
+            for(var i=0;i<obj_data.length;i++){//clear first data
+              if(obj_data[i].node_id!=data.node_id){
+                  file_data.push({"node_id":obj_data[i].node_id,"node_data":obj_data[i].node_data});
+              }
+            }
+            fs.writeFile("node_lists.json",JSON.stringify(file_data),function(err){if(err){console.log(err)}});
+            return file_data;
+
     }
 });
 };
