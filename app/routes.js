@@ -56,7 +56,7 @@ module.exports = function(app) {
           var obj_data=obj;
           var file_data=[];
             for(var i=0;i<obj_data.length;i++){//clear first data
-              if(obj_data[i].node_id!=data.node_id){
+              if(obj_data[i].node_id!=token){
                   file_data.push({"node_id":obj_data[i].node_id,"node_data":obj_data[i].node_data});
               }
             }
