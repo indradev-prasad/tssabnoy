@@ -456,7 +456,9 @@ window.addEventListener('load', function() {
        //still no user
        if(check_chat_connected==false && connected==false){
         document.querySelector(".live_status_button").click();
-                   document.getElementById("remote_video").setAttribute('src','video/video1_'+random_video+'.webm');
+        var video_temp=document.getElementById("remote_video");
+        video_temp.src = 'video/video1_'+random_video+'.webm';
+         video_temp.play();
         document.querySelector('.logo-of-video').setAttribute('style','display:block;');
       document.querySelector(".spin_loader").setAttribute('style','display:none;')
        document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
