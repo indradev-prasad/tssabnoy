@@ -183,7 +183,6 @@ function new_connect(){
       remote_stream.getVideoTracks()[0].stop();
         remote_stream.getAudioTracks()[0].stop();
     remote_stream='';
-       document.querySelector('.logo-of-video').setAttribute('style','display:none;');
         video = document.querySelector('#remote_video');
         video.src='';
    }
@@ -191,6 +190,8 @@ function new_connect(){
     document.querySelector(".spin_loader").setAttribute('style','display:block;')
   document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
   document.querySelector("#conversation").innerHTML='';
+  document.getElementById("remote_video").setAttribute('src','');
+  document.querySelector('.logo-of-video').setAttribute('style','display:none;');
 }
 
 p.on('data', function (data) {
@@ -402,6 +403,7 @@ window.addEventListener('load', function() {
   window.onresize = function(event) {
       setdivheight();
 };
+
   function setdivheight(){
  var w = window,
     d = document,
@@ -438,6 +440,37 @@ window.addEventListener('load', function() {
      // document.querySelector(".video_frame").scrollIntoView();
     }
   }
+  var will_update=true;
+  function update_video(){
+    var random_number=Math.floor(Math.random() * 15) + 2;//from 5 to 40
+    if(will_update==true){
+      if(check_chat_connected==false && connected==false){
+        var random_video=Math.floor(Math.random() * 84) + 1;//from 1 to tota video
+        //reset
+         document.getElementById("remote_video").setAttribute('src','');
+        document.querySelector('.logo-of-video').setAttribute('style','display:none;');
+      document.querySelector(".spin_loader").setAttribute('style','display:block;')
+       document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
+       //set now
+      setTimeout(function(){ 
+       //still no user
+       if(check_chat_connected==false && connected==false){
+                   document.getElementById("remote_video").setAttribute('src','video/video1_'+random_video+'.webm');
+        document.querySelector('.logo-of-video').setAttribute('style','display:block;');
+      document.querySelector(".spin_loader").setAttribute('style','display:none;')
+       document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
+       }
+       //end here
+    }, 2000);
+       }
+      setTimeout(function(){ 
+       will_update=true;
+    }, random_number*1000);
+    }
+    will_update=false;
+     
+  }
+  setInterval(update_video, 5000);//every 10 sec
 });
 
 
