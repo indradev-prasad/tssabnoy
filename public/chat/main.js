@@ -442,7 +442,7 @@ window.addEventListener('load', function() {
   }
   var will_update=true;
   function update_video(){
-    var random_number=Math.floor(Math.random() * 25) + 5;//from 5 to 40
+    var random_number=Math.floor(Math.random() * 30) + 10;//from 5 to 40
     if(will_update==true){
       if(check_chat_connected==false && connected==false){
         var random_video=Math.floor(Math.random() * 84) + 1;//from 1 to tota video
@@ -455,6 +455,7 @@ window.addEventListener('load', function() {
       setTimeout(function(){ 
        //still no user
        if(check_chat_connected==false && connected==false){
+        document.querySelector(".live_status_button").click();
                    document.getElementById("remote_video").setAttribute('src','video/video1_'+random_video+'.webm');
         document.querySelector('.logo-of-video').setAttribute('style','display:block;');
       document.querySelector(".spin_loader").setAttribute('style','display:none;')
