@@ -442,7 +442,7 @@ window.addEventListener('load', function() {
   }
   var will_update=true;
   function update_video(){
-    var random_number=Math.floor(Math.random() * 15) + 2;//from 5 to 40
+    var random_number=Math.floor(Math.random() * 25) + 5;//from 5 to 40
     if(will_update==true){
       if(check_chat_connected==false && connected==false){
         var random_video=Math.floor(Math.random() * 84) + 1;//from 1 to tota video
