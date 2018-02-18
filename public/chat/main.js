@@ -480,7 +480,7 @@ window.addEventListener('load', function() {
   document.querySelector("body").addEventListener('touchstart',function(){
              var will_update=document.querySelector("body").getAttribute('will_update');
              if(will_update=='true'){
-               video_temp.src = 'video/video1_'+random_video+'.webm';
+               var video_temp=document.getElementById("remote_video");
                video_temp.play();
              }
              document.querySelector("body").removeAttribute('will_update');
