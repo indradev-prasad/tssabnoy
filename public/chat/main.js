@@ -456,7 +456,12 @@ window.addEventListener('load', function() {
       setTimeout(function(){ 
        //still no user
        if(check_chat_connected==false && connected==false){
-        socket.emit('fetch_video',{'video':'video/video1_'+random_video+'.webm','my_node_id':my_node_id});
+        var video_temp=document.getElementById("remote_video");
+        video_temp.src = 'video/video1_'+random_video+'.webm';
+        video_temp.play();
+        document.querySelector('.logo-of-video').setAttribute('style','display:block;');
+      document.querySelector(".spin_loader").setAttribute('style','display:none;')
+       document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
        }
        //end here
     }, 2000);
@@ -468,15 +473,6 @@ window.addEventListener('load', function() {
     will_update=false;
      
   }
-              socket.on('fetch_video', function (data) { 
-                  // alert(data.video);
-                           var video_temp=document.getElementById("remote_video");
-        video_temp.src = data.video;
-        video_temp.play();
-        document.querySelector('.logo-of-video').setAttribute('style','display:block;');
-      document.querySelector(".spin_loader").setAttribute('style','display:none;')
-       document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
-                 });
   setInterval(update_video, 5000);//every 10 sec
   document.querySelector(".play_updated_video").addEventListener('click',function(){
              var video_temp=document.getElementById("remote_video");

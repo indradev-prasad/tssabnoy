@@ -74,9 +74,6 @@ module.exports = function(io) {
                     socket.on('chat_typing_broadcast', function(data){
                   io.to(data.stranger_node_id).emit('chat_typing_broadcast',data);//broadcast
                     });
-                  socket.on('fetch_video', function(data){
-                  io.to(data.my_node_id).emit('fetch_video',data);//broadcast
-                    });
 
     socket.on('disconnect', function(){
     	--total_no;//leave node
