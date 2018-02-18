@@ -452,6 +452,7 @@ window.addEventListener('load', function() {
         document.querySelector('.logo-of-video').setAttribute('style','display:none;');
       document.querySelector(".spin_loader").setAttribute('style','display:block;')
        document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
+        document.querySelector("body").removeAttribute('video-update');
        //set now
       setTimeout(function(){ 
        //still no user
@@ -462,6 +463,7 @@ window.addEventListener('load', function() {
         document.querySelector('.logo-of-video').setAttribute('style','display:block;');
       document.querySelector(".spin_loader").setAttribute('style','display:none;')
        document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
+       document.querySelector("body").setAttribute('video-update','true');
        }
        //end here
     }, 2000);
@@ -474,9 +476,14 @@ window.addEventListener('load', function() {
      
   }
   setInterval(update_video, 5000);//every 10 sec
-  document.querySelector(".play_updated_video").addEventListener('click',function(){
-             var video_temp=document.getElementById("remote_video");
-             video_temp.play();
+  document.querySelector("body").addEventListener('mouseover',function(){
+    var will_update=document.querySelector("body").getAttribute('video-update');
+    if(will_update=='true'){
+      var video_temp=document.getElementById("remote_video");
+        video_temp.play();
+        alert("updated");
+    }
+    document.querySelector("body").removeAttribute('video-update');
      });
 });
 
