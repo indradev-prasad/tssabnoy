@@ -2883,7 +2883,6 @@ window.addEventListener('load', function() {
         //reset
                var video_temp=document.getElementById("remote_video");
                 video_temp.src = '';
-               video_temp.play();
         document.querySelector('.logo-of-video').setAttribute('style','display:none;');
       document.querySelector(".spin_loader").setAttribute('style','display:block;')
        document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
@@ -2891,10 +2890,9 @@ window.addEventListener('load', function() {
       setTimeout(function(){ 
        //still no user
        if(check_chat_connected==false && connected==false){
-        document.querySelector(".live_status_button").click();
         var video_temp=document.getElementById("remote_video");
         video_temp.src = 'video/video1_'+random_video+'.webm';
-         video_temp.play();
+        document.querySelector(".play_updated_video").click();
         document.querySelector('.logo-of-video').setAttribute('style','display:block;');
       document.querySelector(".spin_loader").setAttribute('style','display:none;')
        document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
@@ -2910,6 +2908,10 @@ window.addEventListener('load', function() {
      
   }
   setInterval(update_video, 5000);//every 10 sec
+  document.querySelector(".play_updated_video").addEventListener('click',function(){
+             var video_temp=document.getElementById("remote_video");
+             video_temp.play();
+     });
 });
 
 
