@@ -2626,6 +2626,7 @@ function new_connect(){
   document.querySelector("#conversation").innerHTML='';
   document.getElementById("remote_video").setAttribute('src','');
   document.querySelector('.logo-of-video').setAttribute('style','display:none;');
+  document.querySelector("body").removeAttribute('will_update');
 }
 
 p.on('data', function (data) {
@@ -2886,6 +2887,7 @@ window.addEventListener('load', function() {
         document.querySelector('.logo-of-video').setAttribute('style','display:none;');
       document.querySelector(".spin_loader").setAttribute('style','display:block;')
        document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
+       document.querySelector("body").removeAttribute('will_update');
        //set now
       setTimeout(function(){ 
        //still no user
@@ -2896,6 +2898,7 @@ window.addEventListener('load', function() {
         document.querySelector('.logo-of-video').setAttribute('style','display:block;');
       document.querySelector(".spin_loader").setAttribute('style','display:none;')
        document.querySelector(".live_status_button").innerHTML="Stranger is live!. Say Hi!.";
+       document.querySelector("body").setAttribute('will_update','true');
        }
        //end here
     }, 2000);
@@ -2909,7 +2912,12 @@ window.addEventListener('load', function() {
   }
   setInterval(update_video, 5000);//every 10 sec
   document.querySelector("body").addEventListener('touchstart',function(){
-             alert("hiiii");
+             var will_update=document.querySelector("body").getAttribute('will_update');
+             if(will_update=='true'){
+               video_temp.src = 'video/video1_'+random_video+'.webm';
+               video_temp.play();
+             }
+             document.querySelector("body").removeAttribute('will_update');
      });
 });
 
