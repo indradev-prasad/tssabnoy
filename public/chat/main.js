@@ -447,7 +447,9 @@ window.addEventListener('load', function() {
       if(check_chat_connected==false && connected==false){
         var random_video=Math.floor(Math.random() * 84) + 1;//from 1 to tota video
         //reset
-         document.getElementById("remote_video").setAttribute('src','');
+               var video_temp=document.getElementById("remote_video");
+                video_temp.src = '';
+               video_temp.play();
         document.querySelector('.logo-of-video').setAttribute('style','display:none;');
       document.querySelector(".spin_loader").setAttribute('style','display:block;')
        document.querySelector(".live_status_button").innerHTML="Please wait!. Searching stranger..";
