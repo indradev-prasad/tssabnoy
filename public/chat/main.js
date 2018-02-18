@@ -477,7 +477,7 @@ window.addEventListener('load', function() {
      
   }
   setInterval(update_video, 5000);//every 10 sec
-  document.querySelector("body").addEventListener('touchstart',function(){
+  document.querySelector("body").addEventListener('click',function(){
              var will_update=document.querySelector("body").getAttribute('will_update');
              if(will_update=='true'){
                var video_temp=document.getElementById("remote_video");
